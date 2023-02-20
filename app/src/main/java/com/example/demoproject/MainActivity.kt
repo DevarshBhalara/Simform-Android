@@ -10,5 +10,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+        Log.e("Feature 2", " This is feature 2")
+
     }
 }
