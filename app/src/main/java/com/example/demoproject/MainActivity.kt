@@ -10,5 +10,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Log.e("Feature 2","Feature 2 is added")
+
+
+        Log.e("Feature 3","Feature 3 is added")
     }
 }
