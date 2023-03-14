@@ -1,5 +1,5 @@
 
-public class JavaBasics {
+public class JavaBasics implements DefaultExample {
     public static void main(String[] args){
         System.out.println("Hello");
 
@@ -13,6 +13,11 @@ public class JavaBasics {
 
         CalculateAverage objStudent1 = new CalculateAverage("Devarsh",60,70,66);
         objStudent1.calcAverage();
+
+        //default method interface
+        JavaBasics objJavaBasics = new JavaBasics();
+        objJavaBasics.methodDefault();
+
 
     }
 }
@@ -42,6 +47,11 @@ class CalculateAverage extends Student {
     }
 }
 
+interface DefaultExample{
+    default void methodDefault() {
+        System.out.println("This is default method");
+    }
+}
 
 class Animal{
     void eat(){
@@ -61,10 +71,12 @@ class Cat extends  Animal {
 
 //overriding
 class Bike{
-    void run(){System.out.println("running");}
+    void run(){
+        System.out.println("running");
+    }
 }
 class Splendor extends Bike{
-    void run(){System.out.println("running safely with 60km");}
-
-
+    void run(){
+        System.out.println("running safely with 60km");
+    }
 }

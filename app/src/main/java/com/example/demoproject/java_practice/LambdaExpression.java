@@ -23,11 +23,43 @@ public class LambdaExpression {
         newList.forEach(
                 n -> System.out.println(n)
         );
+
+        boolean result = ClassPassingLambdaAsArgument.check((x) ->  { System.out.println("Inside Main methods"); return (x%2) == 0; } , 10);
+        System.out.println( "Result is " + result);
+
+        String passSomething = "My name is Devarsh";
+        ClassPassingLambdaAsArgument.checkPrintSomethings( (str) -> { System.out.println("Passed argument is : " + str); } , passSomething  );
+
+
     }
 }
 interface Draw{
     void draw();
 }
+
 interface Add {
     int add(int a, int b);
+}
+
+//passing lambda as argument
+class ClassPassingLambdaAsArgument{
+    static boolean check(PassingLambdaAsArgument lambdaVariable, int b){
+        System.out.println("Inside Class methods");
+        System.out.println(lambdaVariable);
+        return lambdaVariable.test(b);
+    }
+
+    static void checkPrintSomethings(PrintSomething printSomething, String str){
+        System.out.println("Inside checkPrintSomething");
+        printSomething.printSomethingMethod(str);
+    }
+
+}
+@FunctionalInterface
+interface PassingLambdaAsArgument{
+    boolean test(int a);
+}
+
+interface PrintSomething{
+    void printSomethingMethod(String str);
 }
