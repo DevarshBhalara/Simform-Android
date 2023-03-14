@@ -24,11 +24,13 @@ public class LambdaExpression {
                 n -> System.out.println(n)
         );
 
-        boolean result = ClassPassingLambdaAsArgument.check((x) ->  { System.out.println("Inside Main methods"); return (x%2) == 0; } , 10);
+        ClassPassingLambdaAsArgument objClass = new ClassPassingLambdaAsArgument();
+
+        boolean result = objClass.check((x) ->  { System.out.println("Inside Main methods"); return (x%2) == 0; } , 10);
         System.out.println( "Result is " + result);
 
         String passSomething = "My name is Devarsh";
-        ClassPassingLambdaAsArgument.checkPrintSomethings( (str) -> { System.out.println("Passed argument is : " + str); } , passSomething  );
+        objClass.checkPrintSomethings( (str) -> { System.out.println("Passed argument is : " + str); } , passSomething  );
 
 
     }
@@ -43,13 +45,13 @@ interface Add {
 
 //passing lambda as argument
 class ClassPassingLambdaAsArgument{
-    static boolean check(PassingLambdaAsArgument lambdaVariable, int b){
+    boolean check(PassingLambdaAsArgument lambdaVariable, int b){
         System.out.println("Inside Class methods");
         System.out.println(lambdaVariable);
         return lambdaVariable.test(b);
     }
 
-    static void checkPrintSomethings(PrintSomething printSomething, String str){
+    void checkPrintSomethings(PrintSomething printSomething, String str){
         System.out.println("Inside checkPrintSomething");
         printSomething.printSomethingMethod(str);
     }
