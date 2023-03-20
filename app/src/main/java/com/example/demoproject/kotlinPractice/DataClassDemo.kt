@@ -23,6 +23,9 @@ fun main() {
     val objLuciCopy2 = objLuci.copy(seriesName1 = "NewLuci")
     println(objLuciCopy)
     println(objLuciCopy2)
+    objLuciCopy2.rating = 8.0f
+    println(objLuciCopy2)
+    println(objLuci)
 
     val hash1 = objElite.hashCode()
     val hash2 = objLuci.hashCode()

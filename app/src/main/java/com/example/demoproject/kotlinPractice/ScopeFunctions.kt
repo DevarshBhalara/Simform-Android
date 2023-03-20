@@ -35,7 +35,24 @@ fun main() {
         println(this.firstName)
     }
 
+
+    val person = Person()
+    val personInfo : String = with (person){
+        println(this.firstName)
+        println(this.age)
+        age + 10
+        "I love the game of football"  //this well be stored in variable personInfo
+    }
+    println("Person info $personInfo")
+
+
 }
+
+class Person{
+    var firstName: String = "Elena Wilson"
+    var age: Int = 28
+}
+
 
 class Employee {
     var firstName: String = ""
