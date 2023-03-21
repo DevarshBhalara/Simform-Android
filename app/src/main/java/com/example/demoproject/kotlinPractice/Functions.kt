@@ -60,7 +60,6 @@ fun main() {
     //calling inline with two parameter
     myInlineTwo(
         {  println(it)
-            return
         },
         { a: Int, b: Int ->  a + b } ,
 
