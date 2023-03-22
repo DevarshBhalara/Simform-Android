@@ -184,10 +184,8 @@ fun main() {
         listOf(0, 0, 0),
         listOf(0, 0, 0)
     )
-    matrix.forEachIndexed{
-        index, value ->
-        value.forEachIndexed {
-            j, number -> println("$j $number");
+    matrix.forEachIndexed{ index, value ->
+        value.forEachIndexed { j, number -> println("$j $number");
             if(matrix.all { it[j] >= j } && value.all { it <= number }) {
                 saddlePoints.add(index, listOf(j))
             }
@@ -196,7 +194,7 @@ fun main() {
 
     println("$saddlePoints")
 
-    var ex = listOf(
+    val ex = listOf(
         listOf(1),
         listOf(2, 3, null, 4),
         listOf(null),

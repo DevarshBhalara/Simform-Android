@@ -9,13 +9,13 @@ fun main() {
     arrayList.add(FileDataClass("FileThree", 0, 12))
     arrayList.add(FileDataClass("FileFour", 1, 12))
 
-    var fileinfoObj = FileInfo(arrayList)
-    try{
-        fileinfoObj.getByFileName("FileTwo",arrayList)
-        fileinfoObj.isReadable("FileTwo",arrayList)
+    val fileInfoObj = FileInfo()
+    try {
+        fileInfoObj.getByFileName("FileTwo", arrayList)
+        fileInfoObj.isReadable("FileTwo", arrayList)
     } catch (e: FileNotFoundException) {
         println(e)
-    } catch (e: NotReadableFile){
+    } catch (e: NotReadableFile) {
         println(e)
     }
 }

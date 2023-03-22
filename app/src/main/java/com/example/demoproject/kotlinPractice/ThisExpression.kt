@@ -24,20 +24,22 @@ class A { // implicit label @A
 
 }
 
-
 fun main() {
 
-    fun printLine() { println("Top-level function") }
+    fun printLine() {
+        println("Top-level function")
+    }
 
     class A1 {
-        fun printLine() { println("Member function") }
+        fun printLine() {
+            println("Member function")
+        }
 
-        fun invokePrintLine(omitThis: Boolean = false)  {
+        fun invokePrintLine(omitThis: Boolean = false) {
             if (omitThis) printLine()
             else this.printLine()
         }
     }
-
 
     val objB = A().B()
     objB.foo()

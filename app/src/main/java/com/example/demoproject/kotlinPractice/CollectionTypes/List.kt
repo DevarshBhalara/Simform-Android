@@ -27,7 +27,7 @@ fun main() {
     println("The sets are equal: ${num == numbersBackwards}")
 
     //map
-    val numbersMap = mapOf("key1" to 1, "key2" to 2, "key4" to 1,  "key3" to 3,)
+    val numbersMap = mapOf("key1" to 1, "key2" to 2, "key4" to 1, "key3" to 3)
 
     println("All keys: ${numbersMap.keys}")
     println("All values: ${numbersMap.values}")

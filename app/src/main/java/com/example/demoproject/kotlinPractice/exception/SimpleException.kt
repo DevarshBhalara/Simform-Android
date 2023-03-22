@@ -7,9 +7,9 @@ fun main() {
         println("Can't divide by zero")
     }
 
-    val result1 = test(10,2  ) //execute try block
+    val result1 = test(10, 2) //execute try block
     println(result1)
-    val result = test(10,0 )   // execute catch block
+    val result = test(10, 0)   // execute catch block
     println(result)
 
 
@@ -17,8 +17,8 @@ fun main() {
 
 fun test(a: Int, b: Int): Any {
     return try {
-        a/b
-    }catch (e: Exception) {
+        a / b
+    } catch (e: Exception) {
         println(e)
         "Divide by zero not allowed"
     }

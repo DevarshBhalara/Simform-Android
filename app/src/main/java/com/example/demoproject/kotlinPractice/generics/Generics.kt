@@ -5,11 +5,11 @@ fun main() {
     var objGen2 = GenericExample<Int>(10)
 
     //calling generic function
-    genericExample(1, 2, 3, 4, 5,)
+    genericExample(1, 2, 3, 4, 5)
     genericExample("a", "b", "c", "d")
 
-    val ints: Array<Int> = arrayOf(1,2,3)
-    val anys: Array<Any> = Array<Any>(3) {""}
+    val ints: Array<Int> = arrayOf(1, 2, 3)
+    val anys: Array<Any> = Array<Any>(3) { "" }
     for (i in anys.indices) {
         println(anys[i])
     }
@@ -18,12 +18,6 @@ fun main() {
         anys
     )
 
-}
-class GenericExample <T> (input: T) {
-
-    init {
-        println("Called with value $input")
-    }
 }
 
 fun <T> genericExample(vararg array: T) {

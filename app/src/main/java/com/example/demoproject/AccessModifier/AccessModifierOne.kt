@@ -1,6 +1,6 @@
 package com.example.demoproject.AccessModifier
 
-import com.example.demoproject.kotlinPractice.Student
+import com.example.demoproject.kotlinPractice.classAndObect.Student
 
 fun main() {
     //internal class visible within same module

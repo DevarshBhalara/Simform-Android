@@ -2,7 +2,8 @@ package com.example.demoproject.kotlinPractice.generics
 
 class Cup<out T>
 open class B
-class A: B()
+class A : B()
+
 fun main(args: Array<String>) {
 
     /** out */
@@ -22,4 +23,4 @@ fun main(args: Array<String>) {
 
 class Cup2<in T>
 open class B2
-class A2: B2()
+class A2 : B2()

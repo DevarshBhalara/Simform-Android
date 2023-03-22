@@ -9,7 +9,7 @@ class CookieShop : CookieInterface {
     override fun preferredCookieSize(size: Int): Int {
         return if (size > 12) {
             12
-        }else{
+        } else {
             size
         }
     }

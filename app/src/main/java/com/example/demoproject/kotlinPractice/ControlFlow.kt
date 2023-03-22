@@ -1,4 +1,5 @@
 package com.example.demoproject.kotlinPractice
+
 var a = 10
 var b = 20
 fun main() {
@@ -15,10 +16,10 @@ fun main() {
 
     //as a experssion
 
-    var min = if (a < b) a else b
+    val min = if (a < b) a else b
     println("Min is : $min")
 
-    var min2 = if (a < b) {
+    val min2 = if (a < b) {
         println("a is min")
         a
     } else {
@@ -37,10 +38,10 @@ fun main() {
             78
         }
     }
-    
+
     //when -> if-else if
-    var x = 10
-    var y = 20
+    val x = 10
+    val y = 20
     when {
         x.isEven() -> println("x is odd")
         y.isEven() -> println("y is even")
@@ -63,12 +64,12 @@ fun main() {
         println("at index $index element is $value")
     }
 
-    loop@for (i in 1..5) {
-             for (j in 1..5) {
-                if ( j == 3)
-                    continue@loop
-                println("J : $j")
-            }
+    loop@ for (i in 1..5) {
+        for (j in 1..5) {
+            if (j == 3)
+                continue@loop
+            println("J : $j")
+        }
         println("i : $i")
     }
 
@@ -98,8 +99,8 @@ fun main() {
 
 
     var valOne = 10
-    fun testChange(vararg a1: Int){
-        for (i in a1){
+    fun testChange(vararg a1: Int) {
+        for (i in a1) {
             println(i)
         }
     }

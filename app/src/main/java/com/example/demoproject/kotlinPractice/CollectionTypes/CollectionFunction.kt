@@ -8,7 +8,7 @@ fun main() {
     val setNumber = setOf(1, 2, 3, 4)
     println(setNumber.map { it * 2 })
 
-    numbers.forEach{
+    numbers.forEach {
         println(it)
     }
 

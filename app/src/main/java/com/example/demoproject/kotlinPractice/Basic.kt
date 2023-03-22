@@ -5,7 +5,7 @@ import kotlin.reflect.typeOf
 fun main() {
     println("Hello")
 
-    var ans = sum(10,20)
+    val ans = sum(10,20)
     println("Hello" + ans)
 
     val a: Int = 100
@@ -29,13 +29,13 @@ fun main() {
     val x = (1 shl 2)
     println(x)
 
-    var str = "Devarsh"
+    val str = "Devarsh"
 
     for (i in str) {
         println(i)
     }
 
-    var rawStringStr = """
+    val rawStringStr = """
         hello 
               my name is 
         Devarsh
@@ -49,10 +49,10 @@ fun main() {
     var str1 = "Devarsh"
     println("$str.length is ${str.length}")
 
-    var value = "h"
-    if(value is String) {
+    val value = "h"
+    if (value is String) {
         println("$value is a String")
-    }else {
+    } else {
         println("Not a string")
     }
     var ch: Char
@@ -72,7 +72,7 @@ fun main() {
 //    println(typeOf(x1))
 //    println(x1)
 
-    var strx = "Devarsh"
+    val strx = "Devarsh"
     if (strx is String && strx.length > 0) {
         print(strx.length) // x is automatically cast to String
     }

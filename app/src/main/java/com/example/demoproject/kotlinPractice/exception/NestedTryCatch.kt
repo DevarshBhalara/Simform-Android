@@ -5,14 +5,14 @@ fun main() {
     val d = intArrayOf(2, 0, 4, 4, 0, 8)
 
     try {
-        for (i in n.indices){
+        for (i in n.indices) {
             try {
-                println(n[i].toString() + "/" + d[i] + " is " + n[i]/d[i])
+                println(n[i].toString() + "/" + d[i] + " is " + n[i] / d[i])
             } catch (e: ArithmeticException) {
                 println("Can't divide by zero")
             }
         }
-    }catch (ex: ArrayIndexOutOfBoundsException) {
+    } catch (ex: ArrayIndexOutOfBoundsException) {
         println("No more element")
     }
 }
