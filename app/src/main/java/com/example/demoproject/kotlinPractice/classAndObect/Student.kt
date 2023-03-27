@@ -12,7 +12,7 @@ open class Student(var fname: String,var lname: String) {
         println("This is protected method")
     }
 
-    constructor(grade1: Int, grade2: Int, grade3: Int): this("Dev", "bhalara") {
+    constructor(grade1: Int, grade2: Int, grade3: Int) : this("Dev", "bhalara") {
         println("Inside constructor")
         this.grade1 = grade1
         this.grade2 = grade2

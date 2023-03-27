@@ -2,8 +2,8 @@ package com.example.demoproject.kotlinPractice.dataClass
 
 fun main() {
 
-    val objElite = SeriesDataClass("Elite",6,8.2f)
-    val objLuci = SeriesDataClass("Lucifer",8,8.2f)
+    val objElite = SeriesDataClass("Elite", 6, 8.2f)
+    val objLuci = SeriesDataClass("Lucifer", 8, 8.2f)
     println(objLuci)
     val objCopy2 = objLuci
 //    objCopy2.seriesName1 = "Newwwwwwww"
@@ -27,16 +27,19 @@ fun main() {
     val hash1 = objElite.hashCode()
     val hash2 = objLuci.hashCode()
     val hash3 = objLuciCopy.hashCode()
+    val hash4 = objLuciCopy2.hashCode()
     println(hash1)
     println(hash2)
     println(hash3)
+    println(hash4)
 
 
     println("Rating same ? : ${objElite.seasonCount == objLuci.seasonCount}")
 
-    println("is Lucifer and elite same ? ${objElite.equals(objLuci) }")
+    println("is Lucifer and elite same ? ${objElite.equals(objLuci)}")
     println("is Lucifer and Copylucifer same ? ${objLuciCopy.equals(objLuci)}")
     println("is Lucifer and Copylucifer changed name same ? ${objLuciCopy2.equals(objLuciCopy)}")
+    println("is Lucifer and Copylucifer changed name same ? ${objLuciCopy2.equals(objLuci)}")
 }
 
 //fun changeData(data: SeriesDataClass) {

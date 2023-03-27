@@ -1,11 +1,9 @@
 package com.example.demoproject.kotlinPractice
 
-import kotlin.reflect.typeOf
-
 fun main() {
     println("Hello")
 
-    val ans = sum(10,20)
+    val ans = sum(10, 20)
     println("Hello" + ans)
 
     val a: Int = 100
@@ -91,9 +89,82 @@ fun main() {
     val arr3 = IntArray(5) { 42 }
     arr3.forEach { println(it) }
 
+    var stringTest: String? = "Hello"
+    stringTest = null
+    val l = if (stringTest != null) println(stringTest.length) else -1
+    println(l)
+
+    stringTest.let {
+        println(it)
+    }
+
+    val l2 = stringTest?.length ?: -1
+    println(l2)
+
+    val alice = Person("Alice")
+    val sourceList = mutableListOf(alice, Person("Bob"))
+    val copyList = sourceList.toList()
+    println("${copyList === sourceList}")
+    sourceList.add(Person("Charles"))
+    alice.name = "Alicia"
+    println("First item's name is: ${sourceList[0].name} in source and ${copyList[0].name} in copy")
+    println("List size is: ${sourceList.size} in source and ${copyList.size} in copy")
+    println("First item's name is: ${sourceList[0].name} in source and ${copyList[0].name} in copy")
+    println("${copyList === sourceList}")
+
+    val colors = setOf("red", "brown", "grey")
+    val animals = setOf("fox", "bear", "wolf")
+    println(colors zip animals)
+
+    val numbersMap = mutableMapOf("one" to 1, "two" to 2, "three" to 3)
+    numbersMap["a"] = 10
+    println(numbersMap)
+
+    val testList = listOf("a", "b", "c")
+
+    val pair: Pair<String, String> = Pair("abc", "xyz")
+    val (value1, value2) = pair
+    println(value1)
+    println(value2)
+    println(pair.second)
+    println(pair.first)
+
+//    for ((index, item) in testList.withIndex()) {
+//        println("${item.index} : ${i.value}")
+//    }
+    val objDataClass2 = DataClass2(1, 2, 3, 4, 5, 6, 7, 8, 9,)
+    val (aa, bb, cc, dd, ee, ff, gg, hh, ii) = objDataClass2
+    println(aa)
+
+    val c1 = Company(10)
+    val c2 = Company(20)
+    val c3 = Company(30)
+    val c4 = Company(20)
+
+    val companies = listOf(c1, c2, c3, c4)
+    val uniqueCompanies = companies.toSet()
+    println(uniqueCompanies)
 
 }
+
+class Person(var name: String)
 
 fun sum(a: Int, b: Int): Int {
     return a + b
 }
+
+data class DataClass2(
+    val a1: Int,
+    val a2: Int,
+    val a3: Int,
+    val a5: Int,
+    val a6: Int,
+    val a7: Int,
+    val a8: Int,
+    val a9: Int,
+    val a10: Int,
+)
+
+
+
+

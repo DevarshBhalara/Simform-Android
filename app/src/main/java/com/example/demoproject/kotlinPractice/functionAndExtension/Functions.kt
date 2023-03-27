@@ -1,6 +1,7 @@
 package com.example.demoproject.kotlinPractice.functionAndExtension
 
 fun Math.addition(a: Int, b: Int): Int {
+//    println(aaa) can't access private property
     return a + b
 }
 
@@ -17,7 +18,7 @@ inline fun myInline(myF: () -> Unit) {
 }
 
 //inline with two arguments
-inline fun myInlineTwo( /*crossinline */myFunctionOne: (String) -> Unit,
+inline fun myInlineTwo( myFunctionOne: (String) -> Unit,
                                         myFunctionTwo: (Int, Int) -> Int
 ) {
 
@@ -56,6 +57,7 @@ fun main() {
     myInlineTwo(
         {
             println(it)
+            return
         },
         { a: Int, b: Int -> a + b },
 

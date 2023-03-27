@@ -21,7 +21,7 @@ open class AreaCircle(val radius: Float) {
         println("Value of counter is $counter")
     }
 
-    companion object{
+    companion object {
         var varInComp = 0
         fun kindOfStatic() {
             println("this is inside companion object")

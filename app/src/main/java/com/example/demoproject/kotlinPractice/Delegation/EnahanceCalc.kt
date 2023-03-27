@@ -1,7 +1,7 @@
 package com.example.demoproject.kotlinPractice.Delegation
 
 class EnahanceCalc(delegate: CalculatorInterface) : CalculatorInterface by delegate {
-    var ans = 0
+    private var ans = 0
     fun performOperation(calculatorVariable: CalculatorVariable) {
         println("Called")
         val operation = calculatorVariable.operation

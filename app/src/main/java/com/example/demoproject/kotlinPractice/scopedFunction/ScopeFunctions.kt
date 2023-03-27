@@ -28,6 +28,12 @@ fun main() {
 
         "Name is $firstName and age is $age"
     }
+
+    val emp2 = Employee().apply {
+        this.firstName = "Test"
+        this.age = 34
+    }
+    println(emp2.age)
     println(objEmployee)
     println(employee.firstName)
 
