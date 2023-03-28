@@ -57,17 +57,22 @@ fun main() {
     println(test())
     println(test())
 
-    val person = Person4().apply {
+    val person = Person4("old", 10).apply {
         name = "Hello"
         age = 10
     }
+    println("${person.name} is ")
 
-    val personName = with(person){
+    val personName = with(person) {
+        this.name = "update"
         name
     }
+    println(person.name)
+
+    test2(y = 20, x = 10)
 }
 
-class Person4(var name: String = "", var age: Int = 0)
+class Person4(var name: String, var age: Int)
 
 class File2(
     var name: String = "",
@@ -75,10 +80,15 @@ class File2(
     var type: Type? = null,
 )
 
-
 fun higherfunc(lmbd: () -> Unit, function: () -> Unit) {
     lmbd()
     function()
+}
+
+fun test2(x: Int, y: Int): Int {
+    println("x = $x")
+    println("Y = $y")
+    return x + y
 }
 
 var i = 0
