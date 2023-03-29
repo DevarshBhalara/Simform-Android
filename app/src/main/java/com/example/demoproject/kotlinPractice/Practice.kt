@@ -1,5 +1,7 @@
 package com.example.demoproject.kotlinPractice
 
+import kotlin.jvm.functions.FunctionN
+
 data class Company(val headCount: Int)
 
 class File(
@@ -40,7 +42,7 @@ fun main() {
     }
 
     // lambda expression
-    val lambda = { println("GeeksforGeeks: A Computer Science portal for Geeks") }
+    val lambda = { println("Hello this lambda") }
     // higher-order function
 
     //invoke higher-order function
@@ -70,6 +72,16 @@ fun main() {
     println(person.name)
 
     test2(y = 20, x = 10)
+
+    val greeting = Greet { println("Hello greeting!") }
+    greeting.greetMethod()
+
+
+    val greeting2: (String) -> Unit = { println(it) }
+    testFunction("Hello", greeting2)
+
+    val greeting3 = { str: String -> println(str) }
+    testFunction("Hello", greeting3)
 }
 
 class Person4(var name: String, var age: Int)
@@ -94,3 +106,16 @@ fun test2(x: Int, y: Int): Int {
 var i = 0
 
 fun test() = (i * i).also { println(i++) }
+
+
+fun testFunction(param1: String, greet: (String) -> Unit) {
+    println(param1)
+    greet("Hello")
+}
+
+fun interface Greet {
+    fun greetMethod()
+    fun hello() {
+        println("Hello")
+    }
+}

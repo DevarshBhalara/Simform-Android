@@ -8,3 +8,4 @@ fun interface SAMFunctionalInterface {
 //        println("This is test method")
 //    }
 }
+
