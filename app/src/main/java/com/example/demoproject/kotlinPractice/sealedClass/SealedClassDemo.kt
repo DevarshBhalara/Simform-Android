@@ -26,3 +26,4 @@ fun main() {
 
     checkMovieOrSeries(objSeries)
 }
+

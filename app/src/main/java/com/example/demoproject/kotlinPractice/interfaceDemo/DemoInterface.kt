@@ -23,3 +23,11 @@ interface DemoInterface {
     fun setReview(review: String)
     fun printDetails()
 }
+
+object Demo {
+
+}
+
+fun Demo.test() {
+
+}

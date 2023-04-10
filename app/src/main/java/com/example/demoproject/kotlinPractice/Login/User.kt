@@ -17,3 +17,18 @@ class User {
         ADMIN
     }
 }
+
+fun interface Testtt {
+    fun method1()
+}
+
+fun main() {
+    Testtt {
+        println("aa")
+    }
+
+}
+
+fun testCall(x: String, lambda: Testtt) {
+
+}

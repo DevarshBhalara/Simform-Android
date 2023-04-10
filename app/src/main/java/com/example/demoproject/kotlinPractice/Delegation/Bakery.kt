@@ -5,6 +5,6 @@ class Bakery(private val delegate: CookieInterface) : CookieInterface by delegat
     fun makeCookie() {
         val cookieSize: Int = 14
         val cookie = CookieData(preferredCookieSize(cookieSize), true)
-        delegate.cookieWasBacked(cookie)
+        cookieWasBacked(cookie)
     }
 }
