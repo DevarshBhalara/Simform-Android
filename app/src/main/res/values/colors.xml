@@ -7,4 +7,24 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="red">#ff0000</color>
+    <color name="green">#00ff00</color>
+    <color name="lightgray"> #f9f9f9 </color>
+    <color name="cardBackground"> #f7f9fe </color>
+    <color name="purpleColor"> #623cdf </color>
+    
+    <color name="textGrey"> #939393 </color>
+    <color name="background"> #f8f9fe </color>
+    <color name="textColorCard"> #4e5765 </color>
+    <color name="switchThumb"> #3211e2 </color>
+    <color name="switchTrack"> #f6f3fd </color>
+    <color name="bgColor"> #f8f9fe</color>
+    <color name="disebledTextColor"> #86909e</color>
+    <color name="progressColor"> #ededfd </color>
+    <color name="trackColor"> #f8f9fe </color>
+    <color name="progressTextColor"> #a59dd6 </color>
+    <color name="sliderProgressColor"> #3213dc </color>
+    <color name="tempScreenText">  #9ea8b8 </color>
+    <color name="bottomSheetGraberColor"> #ebecf3 </color>
 </resources>

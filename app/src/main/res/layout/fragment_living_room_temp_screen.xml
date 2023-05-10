@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="ac"
+            type="com.example.demoproject.ktscreen.model.TempModel" />
+
+        <variable
+            name="indoor"
+            type="com.example.demoproject.ktscreen.model.TempModel" />
+
+        <variable
+            name="lamp"
+            type="com.example.demoproject.ktscreen.model.TempModel" />
+
+        <variable
+            name="heater"
+            type="com.example.demoproject.ktscreen.model.TempModel" />
+
+        <variable
+            name="tv"
+            type="com.example.demoproject.ktscreen.model.TempModel" />
+
+        <variable
+            name="music"
+            type="com.example.demoproject.ktscreen.model.TempModel" />
+
+        <variable
+            name="sensor"
+            type="com.example.demoproject.ktscreen.model.TempModel" />
+
+        <variable
+            name="outdoor"
+            type="com.example.demoproject.ktscreen.model.TempModel" />
+
+        <variable
+            name="appbar"
+            type="com.example.demoproject.ktscreen.model.AppBarModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgColor">
+
+        <include
+            android:id="@+id/appBar"
+            layout="@layout/kt_screen_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:appbar="@{appbar}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnKwh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/rounded_button_kt"
+            android:drawableStart="@drawable/kt_cpu"
+            android:drawableEnd="@drawable/baseline_arrow_forward_ios_24"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTint="@color/purpleColor"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
+            android:text="@string/_32kwh"
+            android:textAlignment="center"
+            android:textColor="@color/purpleColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appBar" />
+
+
+        <com.example.demoproject.ktscreen.CircularTwo
+            android:id="@+id/slider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnKwh"
+            app:progressAngle="0" />
+
+        <TextView
+            android:id="@+id/tvCalcius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_24"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_56"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/slider"
+            app:layout_constraintEnd_toEndOf="@id/slider"
+            app:layout_constraintStart_toStartOf="@id/slider"
+            app:layout_constraintTop_toTopOf="@id/slider" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/airconditionar"
+            android:textColor="@color/disebledTextColor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/tvCalcius"
+            app:layout_constraintEnd_toEndOf="@id/slider"
+            app:layout_constraintStart_toStartOf="@id/slider"
+            app:layout_constraintTop_toTopOf="@id/slider"
+            app:layout_constraintVertical_bias="0.75" />
+
+
+        <TextView
+            android:id="@+id/celcius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/celciusStr"
+            android:textColor="@color/tempScreenText"
+            android:textSize="@dimen/sp_26"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCalcius" />
+
+        <ImageButton
+            android:id="@+id/btnMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_30"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/minus"
+            android:padding="@dimen/dp_15"
+            android:src="@drawable/baseline_remove_24"
+            android:tint="@color/textGrey"
+            app:layout_constraintBottom_toBottomOf="@id/celcius"
+            app:layout_constraintEnd_toStartOf="@id/tvCalcius"
+            app:layout_constraintTop_toTopOf="@id/tvCalcius"
+            tools:ignore="UseAppTint" />
+
+
+        <ImageButton
+            android:id="@+id/btnPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_30"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/plus"
+            android:padding="@dimen/dp_15"
+            android:src="@drawable/baseline_add_24"
+            android:tint="@color/textGrey"
+            app:layout_constraintBottom_toBottomOf="@id/celcius"
+            app:layout_constraintStart_toEndOf="@id/tvCalcius"
+            app:layout_constraintTop_toTopOf="@id/tvCalcius"
+            tools:ignore="UseAppTint" />
+
+        <TextView
+            style="@style/celuciusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_40_c"
+            app:layout_constraintBottom_toBottomOf="@id/slider"
+            app:layout_constraintEnd_toEndOf="@id/slider"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="@id/slider" />
+
+        <TextView
+            style="@style/celuciusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_32_c"
+            app:layout_constraintBottom_toBottomOf="@id/slider"
+            app:layout_constraintEnd_toEndOf="@id/slider"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="@id/slider" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/items"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/slider"
+            app:layout_constraintVertical_bias="1">
+
+
+            <ImageView
+                android:id="@+id/bottomSheetGraber"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_20"
+                android:scaleType="centerCrop"
+                android:src="@drawable/temp_btn_rounded"
+                android:tint="@color/bottomSheetGraberColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="UseAppTint"
+                android:contentDescription="@string/bottom_sheet_str" />
+
+
+            <include
+                android:id="@+id/itemAC"
+                layout="@layout/item_temp_screen_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                app:data="@{ac}"
+                app:layout_constraintEnd_toStartOf="@id/itemIndoor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bottomSheetGraber" />
+
+            <include
+                android:id="@+id/itemIndoor"
+                layout="@layout/item_temp_screen_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:data="@{indoor}"
+                app:layout_constraintBottom_toBottomOf="@id/itemAC"
+                app:layout_constraintEnd_toStartOf="@id/itemLamp"
+                app:layout_constraintStart_toEndOf="@id/itemAC"
+                app:layout_constraintTop_toTopOf="@id/itemAC" />
+
+            <include
+                android:id="@+id/itemLamp"
+                layout="@layout/item_temp_screen_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:data="@{lamp}"
+                app:layout_constraintBottom_toBottomOf="@id/itemIndoor"
+                app:layout_constraintEnd_toStartOf="@id/itemHeater"
+                app:layout_constraintStart_toEndOf="@id/itemIndoor"
+                app:layout_constraintTop_toTopOf="@id/itemAC" />
+
+            <include
+                android:id="@+id/itemHeater"
+                layout="@layout/item_temp_screen_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:data="@{heater}"
+                app:layout_constraintBottom_toBottomOf="@id/itemLamp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/itemLamp"
+                app:layout_constraintTop_toTopOf="@id/itemLamp" />
+
+
+            <include
+                android:id="@+id/itemTV"
+                layout="@layout/item_temp_screen_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:data="@{tv}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/itemMusic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/itemAC" />
+
+            <include
+                android:id="@+id/itemMusic"
+                layout="@layout/item_temp_screen_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:data="@{music}"
+                app:layout_constraintBottom_toBottomOf="@id/itemTV"
+                app:layout_constraintEnd_toStartOf="@id/itemSensor"
+                app:layout_constraintStart_toEndOf="@id/itemTV"
+                app:layout_constraintTop_toTopOf="@id/itemTV" />
+
+            <include
+                android:id="@+id/itemSensor"
+                layout="@layout/item_temp_screen_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:data="@{sensor}"
+                app:layout_constraintBottom_toBottomOf="@id/itemTV"
+                app:layout_constraintEnd_toStartOf="@id/itemOutdoor"
+                app:layout_constraintStart_toEndOf="@id/itemMusic"
+                app:layout_constraintTop_toTopOf="@id/itemTV" />
+
+            <include
+                android:id="@+id/itemOutdoor"
+                layout="@layout/item_temp_screen_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:data="@{outdoor}"
+                app:layout_constraintBottom_toBottomOf="@id/itemTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/itemSensor"
+                app:layout_constraintTop_toTopOf="@id/itemTV" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

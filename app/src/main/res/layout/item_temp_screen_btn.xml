@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.demoproject.ktscreen.model.TempModel" />
+    </data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btnItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/temp_screen_btn"
+            android:padding="@dimen/dp_15"
+            android:src="@{data.image}"
+            android:tint="@{data.enabled ?  @color/purpleColor : @color/disebledTextColor}"
+            tools:ignore="UseAppTint"
+            android:contentDescription="@string/icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:enabled="@{data.enabled}"
+            android:text="@{data.title}"
+            android:textColor="@{data.enabled ? @color/black : @color/disebledTextColor }" />
+
+    </LinearLayout>
+</layout>

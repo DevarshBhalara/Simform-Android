@@ -12,5 +12,26 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+    </style>
+
+    <style name="ChipUncheckedText" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="colour_picker"
+        parent="Base.Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/color_picker</item>
+    </style>
+
+    <style name="detailsShoesText">
+        <item name="android:textSize"> 20sp </item>
+        <item name="android:textStyle"> bold </item>
+        <item name="android:textColor"> @color/black </item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#B5B5B5</item>
+        <item name="colorControlActivated"> #ffd040 </item>
     </style>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <color android:color="@color/green"/>
+        <rotate android:fromDegrees="270" android:toDegrees="270">
+            <shape android:shape="ring" android:thickness="2.5dp" android:useLevel="true">
+                <corners android:radius="200dp" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

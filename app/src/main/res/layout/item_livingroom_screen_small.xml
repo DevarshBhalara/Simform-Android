@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="cardData"
+            type="com.example.demoproject.ktscreen.model.HomeMartModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView android:id="@+id/cardTemp"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn24"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        android:outlineSpotShadowColor="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@id/guideVerticalStart"
+        app:layout_constraintEnd_toEndOf="@id/guideVerticalCenter"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_10"
+            >
+
+            <ImageView
+                android:id="@+id/deviceIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@{cardData.image}"
+                style="@style/ktScreenCardImageSmall"
+                android:background="@drawable/rounded_button_icon_card"
+                tools:ignore="UseAppTint" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ktScreenText"
+                android:text="@{cardData.title}"
+                android:layout_marginStart="@dimen/dp_10"
+                app:layout_constraintBottom_toTopOf="@id/tvSubtitle"
+                app:layout_constraintStart_toEndOf="@id/deviceIcon"
+                app:layout_constraintTop_toTopOf="@id/deviceIcon"/>
+
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ktScreenSubText"
+                android:text="@{cardData.subtitle}"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintBottom_toBottomOf="@id/deviceIcon"/>
+
+            <ImageView
+                android:id="@+id/deviceIconRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/radio"
+                style="@style/ktScreenCardImageSmall"
+                android:background="@drawable/rounded_button_icon_card"
+                tools:ignore="UseAppTint" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

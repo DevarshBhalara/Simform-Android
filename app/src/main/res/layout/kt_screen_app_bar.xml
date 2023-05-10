@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="appbar"
+            type="com.example.demoproject.ktscreen.model.AppBarModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:background="@android:color/transparent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/moreIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:src="@drawable/more"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/kt_appbar_btn_round"
+            android:contentDescription="@string/moreicon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/moreIcon"
+            app:layout_constraintEnd_toStartOf="@id/notificationIcon"
+            app:layout_constraintTop_toTopOf="@id/moreIcon"
+            app:layout_constraintBottom_toTopOf="@id/subtitle"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Title"
+            android:id="@+id/titleAppBar"
+            style="@style/detailsShoesText"
+            android:padding="0dp"
+            android:textSize="23sp"
+            android:text="@{appbar.title}" />
+
+        <TextView
+            tools:text="Subtitle"
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purpleColor"
+            app:layout_constraintTop_toBottomOf="@id/titleAppBar"
+            app:layout_constraintStart_toStartOf="@id/titleAppBar"
+            app:layout_constraintEnd_toEndOf="@id/titleAppBar"
+            app:layout_constraintBottom_toBottomOf="@id/moreIcon"
+            android:padding="0dp"
+            android:text="@{appbar.subTitle}" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:src="@drawable/bell"
+            android:id="@+id/notificationIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/kt_appbar_btn_round"
+            android:contentDescription="@string/notification_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

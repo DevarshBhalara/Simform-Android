@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="cardData"
+            type="com.example.demoproject.ktscreen.model.HomeMartModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardLamp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn24"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        android:outlineSpotShadowColor="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@id/guideVerticalCenter"
+        app:layout_constraintEnd_toEndOf="@id/guideVerticalEnd"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/lampIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@{cardData.image}"
+                style="@style/ktScreenCardImage"
+                android:tint="@{cardData.isOn ? @color/purpleColor : @color/disebledTextColor }"
+                android:background="@drawable/rounded_button_icon_card"
+                tools:ignore="UseAppTint" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/lampIcon"
+                app:layout_constraintStart_toStartOf="@id/lampIcon"
+                style="@style/ktScreenText"
+                android:textColor="@{cardData.isOn ? @color/purpleColor : @color/disebledTextColor }"
+                android:layout_marginTop="10dp"
+                android:id="@+id/tvLamp"
+                android:text="@{cardData.title}" />
+
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/lampIcon"
+                app:layout_constraintBottom_toBottomOf="@id/lampIcon"
+                android:id="@+id/swDemo"
+                android:checked="@{cardData.isOn}"
+                android:layout_gravity="center"
+                android:thumb="@drawable/thumb_selector"
+                app:track="@drawable/track_selector"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@{cardData.isOn ? @color/purpleColor : @color/disebledTextColor }"
+                app:layout_constraintBottom_toBottomOf="@id/tvLamp"
+                app:layout_constraintStart_toStartOf="@id/swDemo"
+                app:layout_constraintTop_toTopOf="@id/tvLamp"
+                app:layout_constraintTop_toBottomOf="@id/swDemo"
+                app:layout_constraintEnd_toEndOf="@id/swDemo"
+                style="@style/ktScreenSubText"
+                android:text="@string/_24_watt" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>
