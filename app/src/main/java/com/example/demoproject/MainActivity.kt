@@ -15,6 +15,7 @@ import com.example.demoproject.ktscreen.LivingRoomTempScreen
 import com.example.demoproject.layouts.CoordinatorDemoFabButton
 import com.example.demoproject.layouts.CorrdinatorLayoutFragment
 import com.example.demoproject.recyclerview.MovieSeriesFragment
+import com.example.demoproject.recyclerview.ShoesGridRecyclerView
 import com.example.demoproject.recyclerview.SongFragment
 import com.example.demoproject.screens.CartFragment
 import com.example.demoproject.screens.DetailShoes
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         Log.e("Feature 2","Feature 2 is added")
         supportActionBar!!.hide()
         supportFragmentManager.beginTransaction()
-            .replace(R.id.uiComponentsFragment, SongFragment())
+            .replace(R.id.uiComponentsFragment,  ShoesGridRecyclerView())
             .commit()
     }
 

@@ -124,8 +124,7 @@ class LivingRoomScreenFragment : Fragment() {
             false,
             false,
             false,
-            requireContext().getDrawable(R.drawable.lightbulb),
-
+            image = requireContext().getDrawable(R.drawable.lightbulb),
             )
 
         binding.outDoorLight = outLightDoor
@@ -137,7 +136,7 @@ class LivingRoomScreenFragment : Fragment() {
             true,
             true,
             false,
-            requireContext().getDrawable(R.drawable.lightbulb),
+            image = requireContext().getDrawable(R.drawable.lightbulb),
             totalProgress = 90,
         )
         binding.indoorLights = indoorLights
@@ -175,7 +174,7 @@ class LivingRoomScreenFragment : Fragment() {
             isOn = true,
             isProgressBarVisible = true,
             false,
-            requireContext().getDrawable(R.drawable.heater),
+            image = requireContext().getDrawable(R.drawable.heater),
             totalProgress = 80
 
         )
@@ -188,7 +187,7 @@ class LivingRoomScreenFragment : Fragment() {
             false,
             false,
             false,
-            requireContext().getDrawable(R.drawable.motion_sensor),
+            image = requireContext().getDrawable(R.drawable.motion_sensor),
         )
         binding.motionSensor = motionSensor
 
@@ -199,7 +198,7 @@ class LivingRoomScreenFragment : Fragment() {
             true,
             false,
             false,
-            requireContext().getDrawable(R.drawable.signal),
+            image = requireContext().getDrawable(R.drawable.signal),
         )
         binding.wifi = wifi
 
@@ -210,7 +209,7 @@ class LivingRoomScreenFragment : Fragment() {
             true,
             false,
             false,
-            requireContext().getDrawable(R.drawable.air_conditioner),
+            image = requireContext().getDrawable(R.drawable.air_conditioner),
 
             )
         binding.ac = ac
