@@ -1,6 +1,7 @@
 package com.example.demoproject.recyclerview.adapter
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,11 +10,21 @@ import com.example.demoproject.ktscreen.model.LivingRoomCardModel
 
 class LivingRoomAdapter: RecyclerView.Adapter<LivingRoomAdapter.ViewHolder>() {
 
-    private val devices: MutableList<LivingRoomCardModel> = mutableListOf()
 
-    class ViewHolder(private val binding: ItemLivingRoomRecyclerViewBinding): RecyclerView.ViewHolder(binding.root) {
+    val appliances: MutableList<LivingRoomCardModel> = mutableListOf()
+
+    inner class ViewHolder(private val binding: ItemLivingRoomRecyclerViewBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(devices: LivingRoomCardModel) {
             binding.cardData = devices
+        }
+
+        @SuppressLint("NotifyDataSetChanged")
+        fun setRadioClickEvent(position: Int) {
+            binding.rdOnOff.setOnClickListener {
+                appliances[position].isOn = !appliances[position].isOn
+                Log.e("RadioClick", appliances[position].toString())
+                notifyItemChanged(position)
+            }
         }
     }
 
@@ -24,17 +35,19 @@ class LivingRoomAdapter: RecyclerView.Adapter<LivingRoomAdapter.ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return devices.size
+        return appliances.count()
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(devices[position])
+        Log.e("Bind" , appliances[position].toString())
+        holder.bind(appliances[position])
+        holder.setRadioClickEvent(position)
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun submitData(list: List<LivingRoomCardModel>){
-        devices.clear()
-        devices.addAll(list)
+        appliances.clear()
+        appliances.addAll(list)
         notifyDataSetChanged()
     }
 }

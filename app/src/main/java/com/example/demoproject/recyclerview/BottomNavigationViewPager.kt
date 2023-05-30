@@ -5,15 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.viewpager2.widget.ViewPager2
 import com.example.demoproject.R
-import com.example.demoproject.databinding.FragmentLivingRoomRecyclerViewBinding
-import com.example.demoproject.recyclerview.adapter.LivingRoomAdapter
-import com.example.demoproject.recyclerview.data.LivingRoomData
-import com.example.demoproject.recyclerview.itemdecoration.LivingRoomMarginBottom
+import com.example.demoproject.databinding.FragmentBottomNavigationViewPagerBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,16 +16,14 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [LivingRoomRecyclerView.newInstance] factory method to
+ * Use the [BottomNavigationViewPager.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LivingRoomRecyclerView : Fragment() {
+class BottomNavigationViewPager : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var binding: FragmentLivingRoomRecyclerViewBinding
-    private val applianceAdapter = LivingRoomAdapter()
-
+    lateinit var binding: FragmentBottomNavigationViewPagerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +37,8 @@ class LivingRoomRecyclerView : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLivingRoomRecyclerViewBinding.inflate(layoutInflater)
+        // Inflate the layout for this fragment
+        binding = FragmentBottomNavigationViewPagerBinding.inflate(layoutInflater)
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
@@ -56,11 +49,29 @@ class LivingRoomRecyclerView : Fragment() {
     }
 
     private fun setUpUI() {
-        binding.recyclerView.adapter = applianceAdapter
-        binding.recyclerView.layoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
+        binding.viewPager.adapter = BottomNavAdapter(requireActivity(), 3)
+        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+            override fun onPageSelected(position: Int) {
+                when (position) {
+                    0 -> binding.bottomNavigation.selectedItemId = R.id.song
+                    1 -> binding.bottomNavigation.selectedItemId = R.id.movieSeries
+                    2 -> binding.bottomNavigation.selectedItemId = R.id.series
+                }
+                super.onPageSelected(position)
+            }
+        })
 
-        val appliances = LivingRoomData.getAllCard(requireContext())
-        applianceAdapter.submitData(appliances)
+        binding.bottomNavigation.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.song -> binding.viewPager.setCurrentItem(0,true)
+                R.id.movieSeries -> binding.viewPager.setCurrentItem(1,true)
+                R.id.series -> binding.viewPager.setCurrentItem(2,true)
+                else -> {
+                    binding.viewPager.setCurrentItem(0,true)
+                }
+            }
+            true
+        }
     }
 
     companion object {
@@ -70,12 +81,12 @@ class LivingRoomRecyclerView : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment LivingRoomRecyclerView.
+         * @return A new instance of fragment BottomNavigationViewPager.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            LivingRoomRecyclerView().apply {
+            BottomNavigationViewPager().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

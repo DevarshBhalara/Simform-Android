@@ -241,4 +241,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="song">Song</string>
+    <string name="movieseries">MovieSeries</string>
+    <string name="series">Series</string>
+    <string name="user_s_review">User\'s Review</string>
 </resources>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="series"
+            type="com.example.demoproject.recyclerview.model.Series" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/black"
+        android:layout_marginBottom="3dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="150dp"
+                android:layout_height="300dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/dawnfm_portrait"
+                android:src="@{series.image}"
+
+                />
+
+            <TextView
+                android:id="@+id/movieName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/image"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintBottom_toTopOf="@id/rating"
+                tools:text="Series Name"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:text="@{series.name}"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_10"
+                />
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:tint="#f07584"
+                app:layout_constraintTop_toBottomOf="@id/movieName"
+                app:layout_constraintBottom_toTopOf="@id/language"
+                app:layout_constraintStart_toStartOf="@id/movieName"
+                tools:ignore="UseAppTint" />
+
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="rating"
+                style="@style/MovieSeriesText"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@{series.rating+`/10`}"
+                app:layout_constraintTop_toBottomOf="@id/movieName"
+                app:layout_constraintBottom_toTopOf="@id/language"
+                app:layout_constraintStart_toEndOf="@id/star"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/language"
+                tools:text="Hindi sdfsfsfs"
+                android:ellipsize="end"
+                style="@style/MovieSeriesTextBg"
+                app:layout_constraintHorizontal_bias="0"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/item_text_view"
+                android:text="@{series.languageString +``}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/star"
+                app:layout_constraintTop_toBottomOf="@id/rating"/>
+
+
+            <TextView
+                android:id="@+id/gerne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="gerne"
+                style="@style/MovieSeriesTextBg"
+                app:layout_constraintHorizontal_bias="0"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/item_text_view"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@{series.gerneString +``}"
+                app:layout_constraintTop_toBottomOf="@id/language"
+                app:layout_constraintStart_toStartOf="@id/star"
+                app:layout_constraintBottom_toTopOf="@id/episodes"
+                />
+
+            <TextView
+                android:id="@+id/episodes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="episodes"
+                style="@style/MovieSeriesTextBg"
+                android:background="@drawable/item_text_view"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@{series.totalEpisodes+``}"
+                app:layout_constraintTop_toBottomOf="@id/gerne"
+                app:layout_constraintStart_toStartOf="@id/star"
+                app:layout_constraintBottom_toTopOf="@id/season"
+                />
+
+
+            <TextView
+                android:id="@+id/season"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="seasons"
+                style="@style/MovieSeriesTextBg"
+                android:background="@drawable/item_text_view"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@{series.seasons +``}"
+                app:layout_constraintTop_toBottomOf="@id/episodes"
+                app:layout_constraintStart_toStartOf="@id/star"
+                app:layout_constraintBottom_toBottomOf="@id/image"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/tvUserReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/user_s_review"
+                android:textAlignment="center"
+                style="@style/detailsShoesText"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/image"
+                app:layout_constraintTop_toBottomOf="@id/image"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="@id/image"
+                app:layout_constraintTop_toBottomOf="@id/tvUserReview" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
