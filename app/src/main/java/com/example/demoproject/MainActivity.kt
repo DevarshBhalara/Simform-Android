@@ -15,6 +15,7 @@ import com.example.demoproject.ktscreen.LivingRoomTempScreen
 import com.example.demoproject.layouts.CoordinatorDemoFabButton
 import com.example.demoproject.layouts.CorrdinatorLayoutFragment
 import com.example.demoproject.recyclerview.*
+import com.example.demoproject.recyclerview.kt.ChatFragment
 import com.example.demoproject.screens.CartFragment
 import com.example.demoproject.screens.DetailShoes
 import com.example.demoproject.screens.HomePageFragment
@@ -22,12 +23,12 @@ import com.example.demoproject.screens.HomePageFragment
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        installSplashScreen()
+//        installSplashScreen()
         setContentView(R.layout.activity_main)
         Log.e("Feature 2","Feature 2 is added")
         supportActionBar!!.hide()
         supportFragmentManager.beginTransaction()
-            .replace(R.id.uiComponentsFragment,  BottomNavigationViewPager())
+            .replace(R.id.uiComponentsFragment,  ChatFragment())
             .commit()
     }
 

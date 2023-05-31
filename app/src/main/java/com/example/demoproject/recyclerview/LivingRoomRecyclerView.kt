@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.demoproject.R
 import com.example.demoproject.databinding.FragmentLivingRoomRecyclerViewBinding
+import com.example.demoproject.ktscreen.model.AppBarModel
 import com.example.demoproject.recyclerview.adapter.LivingRoomAdapter
 import com.example.demoproject.recyclerview.data.LivingRoomData
 import com.example.demoproject.recyclerview.itemdecoration.LivingRoomMarginBottom
@@ -56,6 +57,8 @@ class LivingRoomRecyclerView : Fragment() {
     }
 
     private fun setUpUI() {
+        val devies = LivingRoomData.getAllCard(requireContext()).count()
+        binding.appbar = AppBarModel("Living Room", "$devies Devices")
         binding.recyclerView.adapter = applianceAdapter
         binding.recyclerView.layoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
 

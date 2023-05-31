@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.demoproject.databinding.ItemShoesGridBinding
 import com.example.demoproject.recyclerview.model.Shoes
+import com.example.demoproject.recyclerview.pagination.PaginationScrollListner
 
 class ShoesAdapter: RecyclerView.Adapter<ShoesAdapter.ViewHolder>() {
     private val shoes: MutableList<Shoes> = mutableListOf()

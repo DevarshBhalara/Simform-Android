@@ -16,6 +16,7 @@ class LivingRoomAdapter: RecyclerView.Adapter<LivingRoomAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemLivingRoomRecyclerViewBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(devices: LivingRoomCardModel) {
             binding.cardData = devices
+            binding.executePendingBindings()
         }
 
         @SuppressLint("NotifyDataSetChanged")

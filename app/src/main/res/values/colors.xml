@@ -27,4 +27,8 @@
     <color name="sliderProgressColor"> #3213dc </color>
     <color name="tempScreenText">  #9ea8b8 </color>
     <color name="bottomSheetGraberColor"> #ebecf3 </color>
+    
+    <color name="wintergreen"> #35897E </color>
+    <color name="tealgreen"> #215C54 </color>
+    <color name="lightgreenchat"> #E0F6CA </color>
 </resources>
