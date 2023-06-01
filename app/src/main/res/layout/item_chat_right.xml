@@ -15,11 +15,12 @@
         android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/item_chat_bg"
-            android:padding="10dp"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/item_chat_user_bg"
+            android:padding="@dimen/dp_10"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
@@ -28,16 +29,16 @@
 
             <TextView
                 android:id="@+id/tvMessage"
-                style="@style/detailsShoesText"
+                style="@style/chatText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/dp_8"
+                android:maxWidth="@dimen/dp_300"
                 android:text="@{chat.message}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/tvTime"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="User text dsifugs iusdfs iusfisudf isudfsiufiufgifuisufsaifu" />
+                tools:text="User text dsifugs iusdfs iusfisudf isudfs iufiufgi fuisufsaifu" />
 
             <TextView
                 android:id="@+id/tvTime"

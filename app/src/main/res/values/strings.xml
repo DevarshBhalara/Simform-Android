@@ -249,4 +249,11 @@
     <string name="user_name_">User name</string>
     <string name="last_seen">last seen</string>
     <string name="user_name__">User Name</string>
+    <string name="call">Call</string>
+    <string name="video">video</string>
+    <string name="setting">setting</string>
+    <string name="buddy">Buddy!</string>
+    <string name="back">back</string>
+    <string name="send">send</string>
+    <string name="attach">attach</string>
 </resources>

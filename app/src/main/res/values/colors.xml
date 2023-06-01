@@ -31,4 +31,5 @@
     <color name="wintergreen"> #35897E </color>
     <color name="tealgreen"> #215C54 </color>
     <color name="lightgreenchat"> #E0F6CA </color>
+    <color name="autoChatLeft"> #CDCDCD </color>
 </resources>

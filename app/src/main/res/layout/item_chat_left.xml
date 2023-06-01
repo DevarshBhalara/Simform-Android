@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="chat"
             type="com.example.demoproject.recyclerview.kt.model.Chat" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@drawable/item_chat_bg"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/tvMessage"
+            style="@style/chatText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/item_chat_bg"
-            android:padding="10dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:maxWidth="@dimen/dp_300"
+            android:text="@{chat.message}"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_margin="10dp"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toStartOf="@id/tvTime"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="User text sThis is just a test Message, just test User text sThis is just a test Message, just test" />
 
-            <TextView
-                android:id="@+id/tvMessage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="User text"
-                android:padding="@dimen/dp_8"
-                style="@style/detailsShoesText"
-                android:text="@{chat.message}"
-                app:layout_constraintEnd_toStartOf="@id/tvTime"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:text="0:00"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:text="@{chat.time}" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{chat.time}"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="0:00" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
