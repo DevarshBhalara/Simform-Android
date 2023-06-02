@@ -1,6 +1,7 @@
 package com.example.demoproject.model
 
 import java.text.DecimalFormat
+import com.example.demoproject.BR
 
 data class ShoesCartModel(
     val shoesName: String,

@@ -1,6 +1,8 @@
 package com.example.demoproject
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +31,7 @@ class CheckBoxDemo : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+            Log.e("life", "create")
         }
     }
 
@@ -36,11 +39,13 @@ class CheckBoxDemo : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.e("life", "create view")
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_check_box_demo, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.e("life", "on view created")
         super.onViewCreated(view, savedInstanceState)
 
         val cbElite = view.findViewById<CheckBox>(R.id.cbElite)
@@ -69,6 +74,41 @@ class CheckBoxDemo : Fragment() {
             }
             Toast.makeText(context,watchedList,Toast.LENGTH_SHORT).show()
         }
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("life", "starttt")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e("life", "stopp")
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.e("life", "resume")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("life", "on destroy")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.e("life", "on destroy view")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.e("life", "detach")
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.e("life", "attach")
     }
 
     companion object {

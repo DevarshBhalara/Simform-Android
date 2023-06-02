@@ -48,11 +48,12 @@
             tools:src="@drawable/farzi" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingEnd="@dimen/dp_4"
             android:paddingBottom="@dimen/dp_4"
             android:text="@{chat.time}"
+            android:background="@drawable/item_chat_user_bg"
             android:textAlignment="textEnd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/chatImage"

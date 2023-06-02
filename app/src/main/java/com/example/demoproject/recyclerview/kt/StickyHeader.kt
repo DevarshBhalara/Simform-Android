@@ -92,6 +92,7 @@ class StickyHeader: RecyclerView.ItemDecoration() {
         view.layout(0, 0, view.measuredWidth, view.measuredHeight)
     }
 
+
     private fun inflateHeader(recyclerView: RecyclerView): View? {
         return LayoutInflater.from(context)
             .inflate(R.layout.item_chat_date , recyclerView, false)

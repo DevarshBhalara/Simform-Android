@@ -22,8 +22,6 @@ data class Chat (
             return calendar.time
         }
         val dummyData: List<Chat> = listOf(
-            Chat("Hello", MessageType.SEND, "4:55", getDate()),
-            Chat("Hello", MessageType.SEND, "4:55", getDate()),
             Chat("Hello", MessageType.RECEIVE, "4:55", getDate()),
             Chat("Hello", MessageType.RECEIVE, "4:55", getDate()),
             Chat("Hello", MessageType.SEND, "4:55", getDate()),
