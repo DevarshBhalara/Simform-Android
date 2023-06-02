@@ -27,6 +27,10 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
         setContentView(R.layout.activity_main)
         Log.e("Feature 2","Feature 2 is added")
+        supportActionBar!!.hide()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.uiComponentsFragment,  ChatFragment())
+            .commit()
     }
     override fun onStart() {
         super.onStart()
