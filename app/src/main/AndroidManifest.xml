@@ -13,17 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App.Starting"
         tools:targetApi="31">
+
+        <activity android:name=".activityintent.ActivityImplicitIntent"
+            android:theme="@style/Theme.DemoProject"/>
+
         <activity
             android:name=".activityintent.ActivityTwo"
-            android:theme="@style/Theme.DemoProject"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.DemoProject" />
         <activity
             android:name=".activityintent.ActivityOne"
             android:exported="true"
             android:label="@string/title_activity_one"
-            android:theme="@style/Theme.DemoProject" >
+            android:theme="@style/Theme.DemoProject">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".BottomNavigationActivity"
@@ -31,25 +38,15 @@
         <activity
             android:name=".ActivitySplashScreen"
             android:exported="true"
-            android:theme="@style/Theme.DemoProject">
-
-        </activity>
+            android:theme="@style/Theme.DemoProject"></activity>
         <activity
             android:name=".ActivityKTScreen"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat"> </activity>
+            android:theme="@style/Theme.AppCompat"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.DemoProject">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+            android:theme="@style/Theme.DemoProject"></activity>
     </application>
 
 </manifest>

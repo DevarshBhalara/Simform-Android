@@ -1,9 +1,12 @@
 package com.example.demoproject.activityintent
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import com.example.demoproject.CheckBoxDemo
 import com.example.demoproject.R
@@ -13,23 +16,42 @@ import com.example.demoproject.recyclerview.kt.ChatFragment
 
 class ActivityOne : AppCompatActivity() {
     lateinit var binding: ActivityOne2Binding
+    private val getData = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        result ->
+        if(result.resultCode == Activity.RESULT_OK) {
+            val intent = result.data
+            if(intent != null) {
+                addData(intent)
+            }
+        }
+    }
+
+    private fun addData(intent: Intent) {
+        binding.tvFromSecond.text = intent.getStringExtra("datafromsecond")
+        Toast.makeText(this, intent.getStringExtra("datafromsecond").toString(), Toast.LENGTH_SHORT).show()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_one2)
+        
         setContentView(binding.root)
         Log.e("life", "Create")
-        supportActionBar!!.hide()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.uiComponentsFragment,  CheckBoxDemo())
-            .commit()
         setUp()
     }
 
     private fun setUp() {
         binding.gotoSecond.setOnClickListener {
+            val value = binding.edName.text
             val i = Intent(this, ActivityTwo::class.java)
-            startActivity(i)
-            finish()
+            i.putExtra("name", value.toString())
+            getData.launch(i)
+//            i.putExtra("name", value.toString())
+//            startActivity(i)
+        }
+
+        binding.btnImplicitIntent.setOnClickListener {
+            val intent = Intent(this, ActivityImplicitIntent::class.java)
+            startActivity(intent)
         }
     }
 
