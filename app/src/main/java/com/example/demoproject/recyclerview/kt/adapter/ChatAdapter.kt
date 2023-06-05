@@ -20,8 +20,7 @@ import com.example.demoproject.databinding.ItemChatRightImageBinding
 import com.example.demoproject.recyclerview.kt.model.Chat
 import com.example.demoproject.recyclerview.kt.model.MessageType
 
-class ChatAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>(),
-    View.OnCreateContextMenuListener {
+class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     lateinit var context: Context
     val chats: MutableList<Chat> = mutableListOf()
 
@@ -146,11 +145,4 @@ class ChatAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>(),
         }
     }
 
-    override fun onCreateContextMenu(
-        p0: ContextMenu?,
-        p1: View?,
-        p2: ContextMenu.ContextMenuInfo?
-    ) {
-        TODO("Not yet implemented")
-    }
 }

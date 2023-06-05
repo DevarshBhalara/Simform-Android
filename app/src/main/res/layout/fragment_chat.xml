@@ -121,6 +121,21 @@
             app:layout_constraintTop_toTopOf="@+id/edMsg"
             tools:ignore="UseAppTint" />
 
+<!--        <ImageButton-->
+<!--            android:id="@+id/camera"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/dp_10"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:contentDescription="@string/attach"-->
+<!--            android:padding="@dimen/dp_20"-->
+<!--            android:src="@drawable/baseline_attach_file_24"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/edMsg"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/edMsg"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/edMsg"-->
+<!--            tools:ignore="UseAppTint" />-->
+
 
         <ImageButton
             android:id="@+id/button"
@@ -137,6 +152,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/edMsg"
             tools:ignore="UseAppTint" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
