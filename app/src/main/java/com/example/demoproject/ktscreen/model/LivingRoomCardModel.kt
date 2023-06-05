@@ -9,7 +9,7 @@ data class LivingRoomCardModel(
     var isOn: Boolean,
     var isProgressBarVisible: Boolean,
     var isBottomTextVisible: Boolean,
-    var image: Drawable?,
+    var image: Drawable? = null,
     var totalProgress: Int = 0,
     var progressInPercent: Float = (totalProgress / 100F),
     var bottomTitle: String? = null,

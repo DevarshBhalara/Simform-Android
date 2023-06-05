@@ -16,15 +16,15 @@ class RecyclerViewItemDecoration(context: Context, resId: Int): RecyclerView.Ite
         super.onDraw(c, parent, state)
 
 
-        val dividerLeft = 32
-        val dividerRight = parent.width - 32
+        val dividerLeft = 0
+        val dividerRight = parent.width
 
         for (i in 0 until parent.childCount) {
             if( i != parent.childCount - 1) {
                 val child = parent.getChildAt(i)
                 val params = child.layoutParams as RecyclerView.LayoutParams
 
-                val dividerTop = child.bottom + params.bottomMargin
+                val dividerTop = child.bottom
                 val dividerBottom = dividerTop + divider.intrinsicHeight
 
                 divider.setBounds(dividerLeft, dividerTop, dividerRight, dividerBottom)

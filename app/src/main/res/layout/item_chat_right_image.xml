@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="chat"
+            type="com.example.demoproject.recyclerview.kt.model.Chat" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="1">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideVerticalCenter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.22" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/chatImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@id/guideVerticalCenter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/chatImage"
+            app:strokeColor="@color/lightgreenchat"
+            android:adjustViewBounds="true"
+            app:strokeWidth="@dimen/dp_20"
+            tools:src="@drawable/farzi" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/dp_4"
+            android:paddingBottom="@dimen/dp_4"
+            android:text="@{chat.time}"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/chatImage"
+            app:layout_constraintTop_toBottomOf="@id/chatImage"
+            tools:ignore="RtlSymmetry"
+            tools:text="0:00" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

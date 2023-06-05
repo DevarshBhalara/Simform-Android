@@ -1,7 +1,10 @@
 package com.example.demoproject.recyclerview
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,11 +13,14 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import com.example.demoproject.MainActivity
 import com.example.demoproject.R
 import com.example.demoproject.databinding.FragmentSongBinding
 import com.example.demoproject.recyclerview.adapter.SongAdapter
 import com.example.demoproject.recyclerview.itemdecoration.RecyclerViewItemDecoration
 import com.example.demoproject.recyclerview.model.Song
+import com.example.demoproject.recyclerview.pagination.PaginationScrollListner
+import kotlin.concurrent.thread
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,6 +38,7 @@ class SongFragment : Fragment() {
     private var param2: String? = null
     lateinit var binding: FragmentSongBinding
     private val songAdapter = SongAdapter()
+    var pageSize = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +68,7 @@ class SongFragment : Fragment() {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun setUpRecyclerView() {
+
         val songs = listOf(
             Song("Less Than Zero", "3:23", "DawnFM", 2022, true,requireContext().getDrawable(R.drawable.dawnfm_icon)),
             Song("Moth to flame", "4:23", "DawnFM", 2022,false, requireContext().getDrawable(R.drawable.dawnfm_icon)),
@@ -76,6 +84,41 @@ class SongFragment : Fragment() {
 
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.recyclerSong.layoutManager = layoutManager
+
+        binding.recyclerSong.addOnScrollListener(object : PaginationScrollListner(layoutManager) {
+            var loading = false
+
+            override fun loadMoreItems() {
+                loading = true
+                songAdapter.showLoading()
+
+                Handler(Looper.getMainLooper()).postDelayed(Runnable {
+                   songAdapter.addList(songs)
+                    loading = false
+                    songAdapter.hideLoading()
+                    pageSize++
+                }, 2000)
+
+//                Thread {
+//                    Thread.sleep(4000)
+//
+//                    songAdapter.addList(songs)
+//                    loading = false
+//                    songAdapter.hideLoading()
+//                }.start()
+            }
+
+            override fun isLastPage(): Boolean {
+                return PAGESIZE == pageSize
+
+            }
+
+            override fun isLoading(): Boolean {
+                return loading
+            }
+
+
+        })
 //        binding.recyclerSong.addItemDecoration(
 //            DividerItemDecoration(
 //                context,

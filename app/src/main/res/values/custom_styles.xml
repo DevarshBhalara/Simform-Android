@@ -49,4 +49,24 @@
         <item name="android:padding"> 10dp </item>
     </style>
 
+    <style name="chatImage">
+        <item name="cornerFamily"> rounded </item>
+        <item name="cornerSize"> 5% </item>
+    </style>
+
+    <style name="chatText">
+        <item name="android:textSize"> 16sp </item>
+        <item name="android:textColor"> @color/black </item>
+        <item name="android:paddingStart"> 15dp </item>
+        <item name="android:paddingEnd"> 40dp </item>
+        <item name="android:paddingBottom"> 20dp </item>
+        <item name="android:paddingTop"> 15dp </item>
+    </style>
+
+    <style name="dateText">
+        <item name="android:padding"> 5dp </item>
+        <item name="android:textStyle"> bold </item>
+        <item name="android:textColor"> @color/black </item>
+    </style>
+
 </resources>

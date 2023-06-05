@@ -10,8 +10,9 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor"> @color/tealgreen</item>
         <!-- Customize your theme here. -->
+        <item name="android:textColorSecondary">@color/white</item>
 
     </style>
 
@@ -34,4 +35,10 @@
         <item name="colorControlNormal">#B5B5B5</item>
         <item name="colorControlActivated"> #ffd040 </item>
     </style>
+    <style name="Theme.App.Starting.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.App.Starting.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.App.Starting.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
