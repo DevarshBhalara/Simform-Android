@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -9,48 +9,47 @@
         tools:context=".recyclerview.kt.ChatFragment">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
             android:id="@+id/appbar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBar"
-                android:background="@color/tealgreen"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:background="@color/tealgreen"
                 app:menu="@menu/chat_toolbar"
-                app:navigationIconTint="@color/white"
-                >
+                app:navigationIconTint="@color/white">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:tint="@color/white"
+                    android:contentDescription="@string/back"
                     android:src="@drawable/baseline_arrow_back_24"
-                    tools:ignore="UseAppTint"
-                    android:contentDescription="@string/back" />
+                    android:tint="@color/white"
+                    tools:ignore="UseAppTint" />
 
 
                 <ImageView
                     android:layout_width="@dimen/dp_40"
                     android:layout_height="@dimen/dp_40"
                     android:layout_marginStart="@dimen/dp_30"
-                    android:tint="@color/bottomSheetGraberColor"
+                    android:contentDescription="@string/icon"
                     android:src="@drawable/baseline_account_circle_24"
-                    tools:ignore="UseAppTint"
-                    android:contentDescription="@string/icon">
+                    android:tint="@color/bottomSheetGraberColor"
+                    tools:ignore="UseAppTint">
 
                 </ImageView>
 
                 <TextView
+                    style="@style/detailsShoesText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/detailsShoesText"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/sp_14"
                     android:layout_marginStart="@dimen/dp_10"
-                    android:text="@string/buddy" />
+                    android:text="@string/buddy"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14" />
 
             </com.google.android.material.appbar.MaterialToolbar>
 
@@ -58,33 +57,32 @@
 
         <TextView
             android:id="@+id/date"
+            style="@style/dateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="22/05/2023"
-            style="@style/dateText"
+            android:layout_marginTop="@dimen/dp_10"
             android:background="@drawable/item_chat_date_header"
+            android:elevation="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/appbar"
             app:layout_constraintVertical_bias="1"
-            android:layout_marginTop="@dimen/dp_10"
-            android:elevation="1dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="22/05/2023"
 
-          />
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvChat"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:stackFromEnd="true"
-            app:layout_constraintVertical_bias="1"
-            app:layout_constraintTop_toBottomOf="@id/appbar"
+            android:layout_marginBottom="@dimen/dp_20"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@id/edMsg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="@dimen/dp_20"
-            />
+            app:layout_constraintTop_toBottomOf="@id/appbar"
+            app:layout_constraintVertical_bias="1"
+            app:stackFromEnd="true" />
 
         <EditText
             android:id="@+id/edMsg"
@@ -94,17 +92,17 @@
             android:layout_marginTop="@dimen/dp_16"
             android:layout_marginEnd="@dimen/dp_8"
             android:layout_marginBottom="@dimen/dp_16"
+            android:autofillHints="Message"
             android:background="@drawable/chat_edittext"
             android:hint="@string/message"
             android:maxLines="4"
             android:paddingStart="@dimen/dp_16"
             android:paddingTop="@dimen/dp_16"
-            android:paddingBottom="@dimen/dp_16"
             android:paddingEnd="60dp"
+            android:paddingBottom="@dimen/dp_16"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button"
             app:layout_constraintStart_toStartOf="parent"
-            android:autofillHints="Message"
             tools:ignore="RtlSymmetry" />
 
 
@@ -113,15 +111,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/dp_10"
-            android:padding="@dimen/dp_20"
             android:background="@android:color/transparent"
+            android:contentDescription="@string/attach"
+            android:padding="@dimen/dp_20"
             android:src="@drawable/baseline_attach_file_24"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="@+id/edMsg"
             app:layout_constraintEnd_toEndOf="@id/edMsg"
             app:layout_constraintTop_toTopOf="@+id/edMsg"
-            tools:ignore="UseAppTint"
-            android:contentDescription="@string/attach" />
+            tools:ignore="UseAppTint" />
 
 
         <ImageButton
@@ -130,6 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/dp_16"
             android:background="@drawable/chat_send_button"
+            android:contentDescription="@string/send"
             android:padding="@dimen/dp_20"
             android:src="@drawable/baseline_send_24"
             android:textColor="@android:color/white"
@@ -137,8 +136,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/edMsg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/edMsg"
-            tools:ignore="UseAppTint"
-            android:contentDescription="@string/send" />
+            tools:ignore="UseAppTint" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
