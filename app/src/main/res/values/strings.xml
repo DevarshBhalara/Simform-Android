@@ -257,4 +257,10 @@
     <string name="send">send</string>
     <string name="attach">attach</string>
     <string name="title_activity_one">ActivityOne</string>
+    <string name="fragment1">Fragment1</string>
+    <string name="fragment2">Fragment2</string>
+    <string name="fragment_one">Fragment One</string>
+    <string name="fragment_two">Fragment Two</string>
+    <string name="view_browser">View Browser</string>
+    <string name="send_email">Send Email</string>
 </resources>
