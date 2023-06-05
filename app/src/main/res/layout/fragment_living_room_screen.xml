@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="outDoorLight"
+            type="com.example.demoproject.ktscreen.model.LivingRoomCardModel" />
+
+        <variable
+            name="smartTV"
+            type="com.example.demoproject.ktscreen.model.LivingRoomCardModel" />
+
+        <variable
+            name="indoorLights"
+            type="com.example.demoproject.ktscreen.model.LivingRoomCardModel" />
+
+        <variable
+            name="deskLamp"
+            type="com.example.demoproject.ktscreen.model.LivingRoomCardModel" />
+
+        <variable
+            name="heater"
+            type="com.example.demoproject.ktscreen.model.LivingRoomCardModel" />
+
+        <variable
+            name="motionSensor"
+            type="com.example.demoproject.ktscreen.model.LivingRoomCardModel" />
+
+        <variable
+            name="wifi"
+            type="com.example.demoproject.ktscreen.model.LivingRoomCardModel" />
+
+        <variable
+            name="ac"
+            type="com.example.demoproject.ktscreen.model.LivingRoomCardModel" />
+
+        <variable
+            name="appbar"
+            type="com.example.demoproject.ktscreen.model.AppBarModel" />
+
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgColor"
+        tools:context=".ktscreen.LivingRoomScreenFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideVerticalStart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideVerticalEnd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideVerticalCenter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+
+            <include
+                android:id="@+id/appBar"
+                layout="@layout/kt_screen_app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:appbar="@{appbar}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/card"
+                layout="@layout/item_living_room_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_5"
+                app:cardData="@{outDoorLight}"
+                app:layout_constraintEnd_toEndOf="@id/guideVerticalCenter"
+                app:layout_constraintStart_toStartOf="@id/guideVerticalStart"
+                app:layout_constraintTop_toBottomOf="@id/appBar" />
+
+            <include
+                android:id="@+id/cardTV"
+                layout="@layout/item_living_room_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_15"
+                app:cardData="@{smartTV}"
+                app:layout_constraintEnd_toEndOf="@id/guideVerticalEnd"
+                app:layout_constraintStart_toStartOf="@id/guideVerticalCenter"
+                app:layout_constraintTop_toBottomOf="@id/appBar" />
+
+            <include
+                android:id="@+id/cardIndoorLights"
+                layout="@layout/item_living_room_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_5"
+                app:cardData="@{indoorLights}"
+                app:layout_constraintEnd_toEndOf="@id/guideVerticalCenter"
+                app:layout_constraintStart_toStartOf="@id/guideVerticalStart"
+                app:layout_constraintTop_toBottomOf="@id/card" />
+
+            <include
+                android:id="@+id/cardDeskLamp"
+                layout="@layout/item_living_room_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_10"
+                app:cardData="@{deskLamp}"
+                app:layout_constraintEnd_toEndOf="@id/guideVerticalEnd"
+                app:layout_constraintStart_toStartOf="@id/guideVerticalCenter"
+                app:layout_constraintTop_toBottomOf="@id/cardTV" />
+
+            <include
+                android:id="@+id/cardHeater"
+                layout="@layout/item_living_room_card"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_5"
+                app:cardData="@{heater}"
+                app:layout_constraintEnd_toEndOf="@id/guideVerticalCenter"
+                app:layout_constraintStart_toStartOf="@id/guideVerticalStart"
+                app:layout_constraintTop_toBottomOf="@id/cardIndoorLights" />
+
+            <include
+                android:id="@+id/cardMotionSensor"
+                layout="@layout/item_living_room_card"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_10"
+                app:cardData="@{motionSensor}"
+                app:layout_constraintEnd_toEndOf="@id/guideVerticalEnd"
+                app:layout_constraintStart_toStartOf="@id/guideVerticalCenter"
+                app:layout_constraintTop_toBottomOf="@id/cardDeskLamp" />
+
+            <include
+                android:id="@+id/cardWifi"
+                layout="@layout/item_living_room_card"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_5"
+                app:cardData="@{wifi}"
+                app:layout_constraintEnd_toEndOf="@id/guideVerticalCenter"
+                app:layout_constraintStart_toStartOf="@id/guideVerticalStart"
+                app:layout_constraintTop_toBottomOf="@id/cardHeater" />
+
+            <include
+                android:id="@+id/cardAC"
+                layout="@layout/item_living_room_card"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_10"
+                app:cardData="@{ac}"
+                app:layout_constraintEnd_toEndOf="@id/guideVerticalEnd"
+                app:layout_constraintStart_toStartOf="@id/guideVerticalCenter"
+                app:layout_constraintTop_toBottomOf="@id/cardMotionSensor" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
+

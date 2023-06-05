@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="detailsShoesViewModel"
+            type="com.example.demoproject.binding.DetailsShoesViewModel" />
+        <variable
+            name="appBarTitle"
+            type="String" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".screens.DetailShoes">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <include
+            android:layout_width="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
+            layout="@layout/details_shoes_custom_app_bar"
+            android:id="@+id/appBar"
+            app:title="@{appBarTitle}"
+            />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_shoes_image"
+            app:layout_constraintStart_toStartOf="@id/appBar"
+            app:layout_constraintTop_toBottomOf="@id/appBar"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="@id/appBar"
+            android:id="@+id/imgDetailsShoes"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Namedfgdfs"
+            android:text="@{detailsShoesViewModel.shoes.shoesName}"
+            android:id="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@id/imgDetailsShoes"
+            app:layout_constraintStart_toStartOf="@id/imgDetailsShoes"
+            app:layout_constraintEnd_toStartOf="@id/tvPrice"
+            style="@style/detailsShoesText"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="price"
+            android:text="@{detailsShoesViewModel.shoes.shoesPrice}"
+            android:id="@+id/tvPrice"
+            app:layout_constraintStart_toEndOf="@id/tvName"
+            app:layout_constraintEnd_toEndOf="@id/imgDetailsShoes"
+            app:layout_constraintTop_toBottomOf="@id/imgDetailsShoes"
+            android:textStyle="bold"
+            android:textColor="#6241db"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            android:layout_marginTop="5dp"
+            tools:text="4.9"
+            android:text="@{detailsShoesViewModel.shoesDetails.rating}"
+            android:textSize="18sp"
+            android:id="@+id/tvRating" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:theme="@style/RatingBar"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            android:transformPivotX="0dp"
+            android:transformPivotY="0dp"
+            app:layout_constraintStart_toEndOf="@id/tvRating"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+             />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Size"
+            android:text="@string/size"
+            style="@style/detailsShoesText"
+            android:id="@+id/tvSize"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar"
+            app:layout_constraintStart_toStartOf="@id/tvRating"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="@id/tvSize"
+            app:layout_constraintBottom_toBottomOf="@id/tvSize"
+            app:layout_constraintEnd_toEndOf="@id/tvPrice"
+            >
+
+            <Button
+                android:id="@+id/btnUK"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="UK"
+                android:padding="0dp"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                />
+
+            <Button
+                android:id="@+id/btnEU"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="EU"
+                android:background="@android:color/transparent"
+                android:padding="0dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                />
+
+            <Button
+                android:id="@+id/btnID"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="ID"
+                android:padding="0dp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                />
+        </LinearLayout>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipSizeGroup"
+            android:layout_width="match_parent"
+            app:singleSelection="true"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvSize"
+            app:layout_constraintStart_toStartOf="@id/tvSize"
+            android:layout_marginTop="10dp"
+            >
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipBackgroundColor="@color/details_shoes_size_chip"
+                android:text="28"
+                android:checked="false"
+                android:textColor="@color/details_shoes_text_color"
+                app:checkedIcon="@null"
+                android:checkable="true"
+                app:chipCornerRadius="5dp"
+                />
+
+        </com.google.android.material.chip.ChipGroup>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvColor"
+            android:text="@string/colors"
+            style="@style/detailsShoesText"
+            app:layout_constraintTop_toBottomOf="@id/chipSizeGroup"
+            app:layout_constraintStart_toStartOf="@id/chipSizeGroup"
+            android:layout_marginTop="10dp"
+            />
+
+        <RadioGroup
+            android:id="@+id/rgColors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tvColor"
+            app:layout_constraintStart_toStartOf="@id/tvColor"
+            android:layout_marginTop="10dp"
+            >
+
+            <RadioButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:backgroundTint="#fa9e1f"
+                android:background="@drawable/color_picker"
+                android:button="@android:color/transparent"
+                />
+
+            <RadioButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:backgroundTint="#fa5352"
+                android:background="@drawable/color_picker"
+                android:button="@android:color/transparent"
+                />
+
+        </RadioGroup>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/rgColors"
+            app:layout_constraintTop_toBottomOf="@id/rgColors"
+            app:layout_constraintEnd_toEndOf="@id/tvPrice"
+            android:id="@+id/cardDescription"
+            app:cardBackgroundColor="#f7f9fe"
+            app:cardCornerRadius="15dp"
+            android:layout_marginTop="15dp"
+            android:outlineSpotShadowColor="@android:color/transparent"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description"
+                        style="@style/detailsShoesText"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="#6241db"
+                        android:text="@string/read_more" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@{detailsShoesViewModel.shoes.description}" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+</layout>

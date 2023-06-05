@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ChipsDemo">
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        app:singleSelection="true"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipBackgroundColor="@color/chip_selected"
+            android:text="@string/watch"
+            android:checked="false"
+            android:checkable="true"
+             />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/laptop"
+            android:checkable="true"
+            app:checkedIcon="@null"
+            app:chipBackgroundColor="@color/chip_selected"
+            app:chipIcon="@drawable/baseline_laptop_24" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+</LinearLayout>

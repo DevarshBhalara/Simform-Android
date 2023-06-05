@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movieSeries"
+            type="com.example.demoproject.recyclerview.model.MovieSeries" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/black"
+        android:layout_marginBottom="3dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+      >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/farzi"
+                android:src="@{movieSeries.image}"
+                />
+
+            <TextView
+                app:layout_constraintVertical_chainStyle="packed"
+                android:id="@+id/movieName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/image"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintBottom_toTopOf="@id/rating"
+                tools:text="Movie name"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:text="@{movieSeries.name}"
+                android:layout_marginStart="20dp"
+                />
+
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:tint="#f07584"
+                app:layout_constraintTop_toBottomOf="@id/movieName"
+                app:layout_constraintBottom_toTopOf="@id/language"
+                app:layout_constraintStart_toStartOf="@id/movieName"
+                tools:ignore="UseAppTint" />
+
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="rating"
+                android:layout_marginTop="@dimen/dp_10"
+                style="@style/MovieSeriesText"
+                android:text="@{movieSeries.rating+`/10`}"
+                app:layout_constraintTop_toBottomOf="@id/movieName"
+                app:layout_constraintBottom_toTopOf="@id/language"
+                app:layout_constraintStart_toEndOf="@id/star"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/language"
+                tools:text="Hindi, english"
+                style="@style/MovieSeriesText"
+                android:background="@drawable/item_text_view"
+                android:text="@{movieSeries.languageString +``}"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                app:layout_constraintBottom_toTopOf="@id/time"
+                app:layout_constraintStart_toStartOf="@id/star"
+                app:layout_constraintTop_toBottomOf="@id/rating"/>
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="time"
+                style="@style/MovieSeriesText"
+                android:text="@{movieSeries.time+``}"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintTop_toBottomOf="@id/language"
+                app:layout_constraintStart_toStartOf="@id/star"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

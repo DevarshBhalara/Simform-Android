@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".screens.HomePageFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainCL" >
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideVerticalStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideVerticalEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp"  />
+
+        <EditText
+            android:id="@+id/edSearch"
+            android:layout_marginTop="20dp"
+            android:layout_width="0dp"
+            android:padding="10dp"
+            android:drawableStart="@drawable/baseline_search_24"
+            android:layout_height="wrap_content"
+            android:drawableTint="#999999"
+            android:drawablePadding="10dp"
+            android:hint="What kind of Shoes You want?"
+            android:background="@drawable/edittext_rounded"
+            app:layout_constraintStart_toEndOf="@id/guideVerticalStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideVerticalEnd"
+            />
+        
+        <TextView
+            android:id="@+id/tvBestOfThisYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/edSearch"
+            android:text="Best of This year"
+            android:layout_marginTop="20dp"
+            style="@style/detailsShoesText"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/guideVerticalStart" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guideVerticalEnd"
+            android:textColor="@color/purpleColor"
+            android:text="Show More"
+            app:layout_constraintBottom_toBottomOf="@id/tvBestOfThisYear" />
+
+        <ImageView
+            android:id="@+id/image_slide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvBestOfThisYear"
+            android:src="@drawable/image_slider"
+            app:layout_constraintStart_toStartOf="@id/guideVerticalStart"
+            app:layout_constraintEnd_toEndOf="@id/guideVerticalEnd" />
+
+        <HorizontalScrollView
+            android:id="@+id/chipView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/image_slide"
+            app:layout_constraintStart_toStartOf="@id/guideVerticalStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            android:scrollbars="none"
+            android:clipToPadding="true"
+
+            >
+
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipCategory"
+                    android:layout_width="match_parent"
+                    app:singleSelection="true"
+                    android:isScrollContainer="true"
+                    android:scrollbars="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trending"
+                        android:checked="false"
+                        app:chipIcon="@drawable/baseline_add_24"
+                        app:checkedIcon="@drawable/baseline_add_24"
+                        app:chipBackgroundColor="@color/details_shoes_size_chip"
+                        android:textColor="@color/details_shoes_text_color"
+                        app:chipIconTint="@color/details_shoes_text_color"
+                        app:checkedIconTint="@color/details_shoes_text_color"
+                        android:checkable="true"
+                        app:chipCornerRadius="5dp"
+                        />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trending"
+                        android:checked="false"
+                        app:chipIcon="@drawable/baseline_add_24"
+                        app:checkedIcon="@drawable/baseline_add_24"
+                        app:chipBackgroundColor="@color/details_shoes_size_chip"
+                        android:textColor="@color/details_shoes_text_color"
+                        app:chipIconTint="@color/details_shoes_text_color"
+                        app:checkedIconTint="@color/details_shoes_text_color"
+                        android:checkable="true"
+                        app:chipCornerRadius="5dp"
+                        />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trending"
+                        android:checked="false"
+                        app:chipIcon="@drawable/baseline_add_24"
+                        app:checkedIcon="@drawable/baseline_add_24"
+                        app:chipBackgroundColor="@color/details_shoes_size_chip"
+                        android:textColor="@color/details_shoes_text_color"
+                        app:chipIconTint="@color/details_shoes_text_color"
+                        app:checkedIconTint="@color/details_shoes_text_color"
+                        android:checkable="true"
+                        app:chipCornerRadius="5dp"
+                        />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trending"
+                        android:checked="false"
+                        app:chipIcon="@drawable/baseline_add_24"
+                        app:checkedIcon="@drawable/baseline_add_24"
+                        app:chipBackgroundColor="@color/details_shoes_size_chip"
+                        android:textColor="@color/details_shoes_text_color"
+                        app:chipIconTint="@color/details_shoes_text_color"
+                        app:checkedIconTint="@color/details_shoes_text_color"
+                        android:checkable="true"
+                        app:chipCornerRadius="5dp"
+                        />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trending"
+                        android:checked="false"
+                        app:chipIcon="@drawable/baseline_add_24"
+                        app:checkedIcon="@drawable/baseline_add_24"
+                        app:chipBackgroundColor="@color/details_shoes_size_chip"
+                        android:textColor="@color/details_shoes_text_color"
+                        app:chipIconTint="@color/details_shoes_text_color"
+                        app:checkedIconTint="@color/details_shoes_text_color"
+                        android:checkable="true"
+                        app:chipCornerRadius="5dp"
+                        />
+
+                </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+        <GridLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            app:layout_constraintEnd_toEndOf="@id/guideVerticalEnd"
+            app:layout_constraintStart_toStartOf="@id/guideVerticalStart"
+            app:layout_constraintTop_toBottomOf="@id/chipView">
+
+            <androidx.cardview.widget.CardView
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/cardBackground"
+                android:layout_width="185dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/img1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/shoes1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/img1"
+                        app:layout_constraintStart_toStartOf="@id/img1"
+                        android:text="Converse"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/purpleColor"
+                        android:id="@+id/shoesName"
+                        />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_delete_24"
+                        android:background="@android:color/transparent"
+                        android:tint="@color/purpleColor"
+                        app:layout_constraintEnd_toEndOf="@id/img1"
+                        app:layout_constraintTop_toTopOf="@id/shoesName"
+                        tools:ignore="UseAppTint" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/shoesName"
+                        app:layout_constraintStart_toStartOf="@id/img1"
+                        android:text="Chuck Taylor"
+                        android:textStyle="bold"
+                        android:textColor="#435367"
+                        android:id="@+id/shoesStyle"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/shoesStyle"
+                        app:layout_constraintStart_toStartOf="@id/img1"
+                        android:text="Chuck Taylorsdfsfsdfsssfsssdfsfsdfsssf"
+                        android:textStyle="bold"
+                        android:textColor="#435367"
+                        android:id="@+id/shoesDescription"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/cardBackground"
+                android:layout_width="185dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/img2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/shoes1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/img2"
+                        app:layout_constraintStart_toStartOf="@id/img2"
+                        android:text="Converse"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/purpleColor"
+                        android:id="@+id/shoesName2"
+                        />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_delete_24"
+                        android:background="@android:color/transparent"
+                        android:tint="@color/purpleColor"
+                        app:layout_constraintEnd_toEndOf="@id/img2"
+                        app:layout_constraintTop_toTopOf="@id/shoesName2"
+                        tools:ignore="UseAppTint" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/shoesName2"
+                        app:layout_constraintStart_toStartOf="@id/img2"
+                        android:text="Chuck Taylor"
+                        android:textStyle="bold"
+                        android:textColor="#435367"
+                        android:id="@+id/shoesStyle2"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/shoesStyle2"
+                        app:layout_constraintStart_toStartOf="@id/img2"
+                        android:text="Chuck Taylorsdfsfsdfsssfsssdfsfsdfsssf"
+                        android:textStyle="bold"
+                        android:textColor="#435367"
+                        android:id="@+id/shoesDescription2"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
