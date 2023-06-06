@@ -263,4 +263,12 @@
     <string name="fragment_two">Fragment Two</string>
     <string name="view_browser">View Browser</string>
     <string name="send_email">Send Email</string>
+    <string name="today">Today</string>
+    <string name="message_from_another_application">Message from another application</string>
+    <string name="second_fragment">Second Fragment</string>
+    <string name="hello">Hello</string>
+    <string name="home_fragment">Home Fragment</string>
+    <string name="search_fragment">Search Fragment</string>
+    <string name="add_fragment">Add Fragment</string>
+    <string name="open_camera">Open Camera</string>
 </resources>

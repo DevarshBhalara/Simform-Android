@@ -29,7 +29,6 @@
             />
 
         <androidx.fragment.app.FragmentContainerView
-            android:name="com.example.demoproject.activityintent.fragments.FragmentOne"
             android:id="@+id/fragment_host"
             android:layout_width="match_parent"
             android:layout_marginTop="20dp"
