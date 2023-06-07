@@ -20,6 +20,8 @@
             app:exitAnim="@anim/exit_to_right"
             />
 
+
+
     </fragment>
 
     <fragment

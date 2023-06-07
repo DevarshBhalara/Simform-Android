@@ -277,4 +277,5 @@
     <string name="go_to_third">Go to Third</string>
     <string name="this_is_third_fragment">This is Third Fragment</string>
     <string name="go_to_first">Go to First</string>
+    <string name="item_one">Item One</string>
 </resources>
