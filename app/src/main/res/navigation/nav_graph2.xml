@@ -3,26 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph2"
-    app:startDestination="@id/First2Fragment">
+    app:startDestination="@id/myFirstFragment"
+    >
 
     <fragment
-        android:id="@+id/First2Fragment"
-        android:name="com.example.demoproject.activityintent.First2Fragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first2" >
+        android:id="@+id/myFirstFragment"
+        android:name="com.example.demoproject.activityintent.navgraph.MyFirstFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_my_first"
+        >
 
         <action
-            android:id="@+id/action_First2Fragment_to_Second2Fragment"
-            app:destination="@id/Second2Fragment" />
+            android:id="@+id/home_to_second"
+            app:destination="@id/mySecondFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            />
+
     </fragment>
+
     <fragment
-        android:id="@+id/Second2Fragment"
-        android:name="com.example.demoproject.activityintent.Second2Fragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second2" >
+        android:id="@+id/mySecondFragment"
+        android:name="com.example.demoproject.activityintent.navgraph.MySecondFragment"
+        android:label="Second"
+        tools:layout="@layout/fragment_my_second"
+        >
 
         <action
-            android:id="@+id/action_Second2Fragment_to_First2Fragment"
-            app:destination="@id/First2Fragment" />
+            android:id="@+id/second_to_third"
+            app:destination="@id/myThirdFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/myThirdFragment"
+        android:name="com.example.demoproject.activityintent.navgraph.MyThirdFragment"
+        android:label="Third"
+        tools:layout="@layout/fragment_my_third"
+        >
+
+        <action
+            android:id="@+id/third_to_home"
+            app:destination="@id/myFirstFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            />
+
+        <action
+            android:id="@+id/third_to_second"
+            app:destination="@id/mySecondFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"/>
+
+    </fragment>
+
 </navigation>

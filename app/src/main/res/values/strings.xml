@@ -272,4 +272,9 @@
     <string name="add_fragment">Add Fragment</string>
     <string name="open_camera">Open Camera</string>
     <string name="go_to_second">Go to second</string>
+    <string name="this_is_first_fragment">This is First fragment</string>
+    <string name="this_is_secondfragment">This is SecondFragment</string>
+    <string name="go_to_third">Go to Third</string>
+    <string name="this_is_third_fragment">This is Third Fragment</string>
+    <string name="go_to_first">Go to First</string>
 </resources>

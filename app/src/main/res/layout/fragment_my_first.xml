@@ -7,6 +7,17 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".activityintent.navgraph.MyFirstFragment">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="@dimen/sp_26"
+            app:layout_constraintBottom_toTopOf="@id/btnGotoSecond"
+            android:text="@string/this_is_first_fragment"
+            />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
