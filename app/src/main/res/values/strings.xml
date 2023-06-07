@@ -271,4 +271,5 @@
     <string name="search_fragment">Search Fragment</string>
     <string name="add_fragment">Add Fragment</string>
     <string name="open_camera">Open Camera</string>
+    <string name="go_to_second">Go to second</string>
 </resources>

@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
         setContentView(R.layout.activity_main)
         Log.e("Feature 2","Feature 2 is added")
+        val uri = intent.data
         supportActionBar!!.hide()
         supportFragmentManager.beginTransaction()
             .replace(R.id.uiComponentsFragment,  ChatFragment())

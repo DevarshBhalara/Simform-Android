@@ -32,7 +32,7 @@ private var _binding: FragmentFirstBinding? = null
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            findNavController().navigate(R.id.home_to_second)
         }
     }
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN
 import androidx.fragment.app.commit
 import com.example.demoproject.R
 import com.example.demoproject.databinding.ActivityFragmentsBinding
@@ -23,6 +24,7 @@ class ActivityFragments : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putString("fromActivity", "From Activity")
         supportFragmentManager.commit {
+            setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right)
             add(R.id.fragment_host, FragmentOne().apply { arguments = bundle })
             addToBackStack("FragmentOne")
         }
@@ -33,6 +35,7 @@ class ActivityFragments : AppCompatActivity() {
         bundle.putString("fromActivity", "From Activity")
         binding.btnFragmentOne.setOnClickListener {
             supportFragmentManager.commit {
+                setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right)
                 add(R.id.fragment_host, FragmentOne().apply { arguments = bundle })
                 addToBackStack("FragmentOne")
             }
