@@ -8,6 +8,7 @@
         tools:context=".activityintent.navgraph.MyFirstFragment">
 
         <TextView
+            android:id="@+id/tvtop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -16,6 +17,16 @@
             android:textSize="@dimen/sp_26"
             app:layout_constraintBottom_toTopOf="@id/btnGotoSecond"
             android:text="@string/this_is_first_fragment"
+            />
+
+
+        <EditText
+            android:id="@+id/edText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_text"
+            app:layout_constraintTop_toBottomOf="@id/tvtop"
+            android:layout_margin="20dp"
             />
 
         <Button

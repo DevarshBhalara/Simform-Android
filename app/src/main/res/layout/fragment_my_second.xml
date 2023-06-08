@@ -8,14 +8,45 @@
         tools:context=".activityintent.navgraph.MySecondFragment">
 
         <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:textSize="@dimen/sp_26"
-            app:layout_constraintBottom_toTopOf="@id/btnGotoThird"
+            android:layout_margin="60dp"
             android:text="@string/this_is_secondfragment"
+            />
+
+        <TextView
+            android:id="@+id/tvDataPrevious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="@dimen/sp_26"
+            app:layout_constraintBottom_toTopOf="@id/edEmail"
+            android:text="@string/data_from_previous"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvDataPrevious"
+            android:layout_margin="@dimen/dp_20"
+            android:id="@+id/edName"
+            android:hint="@string/name_"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/edName"
+            android:layout_margin="@dimen/dp_20"
+            android:id="@+id/edEmail"
+            android:hint="@string/email"
             />
 
         <Button
@@ -23,8 +54,8 @@
             android:layout_height="wrap_content"
             android:text="@string/go_to_third"
             android:id="@+id/btnGotoThird"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edEmail"
+            android:layout_margin="@dimen/dp_30"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             />

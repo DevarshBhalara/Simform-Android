@@ -22,6 +22,9 @@ class ActivityBottomNavGraph : AppCompatActivity() {
         binding = ActivityBottomNavGraphBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.appBar)
+        binding.appBar.setupWithNavController((supportFragmentManager.fragments[0] as NavHostFragment).navController)
+
 
         (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as? NavHostFragment)?.let {
             navController = it.navController

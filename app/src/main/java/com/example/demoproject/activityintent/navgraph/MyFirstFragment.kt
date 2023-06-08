@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.demoproject.R
 import com.example.demoproject.databinding.FragmentMyFirstBinding
@@ -47,7 +48,11 @@ class MyFirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnGotoSecond.setOnClickListener {
-            findNavController().navigate(R.id.home_to_second)
+            val data = binding.edText.text.toString()
+            val bundle = Bundle().apply {
+                putString("text", data)
+            }
+            view.findNavController().navigate(R.id.home_to_second, bundle)
         }
     }
 

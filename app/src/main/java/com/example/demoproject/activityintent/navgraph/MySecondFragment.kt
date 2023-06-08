@@ -1,12 +1,15 @@
 package com.example.demoproject.activityintent.navgraph
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.demoproject.R
+import com.example.demoproject.ToastDemo
 import com.example.demoproject.databinding.FragmentMySecondBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -46,8 +49,19 @@ class MySecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var data: String? = ""
+        arguments?.let { bundle ->
+            data = bundle.getString("text")
+        }
+
+        Toast.makeText(context, data.toString(), Toast.LENGTH_SHORT).show()
+        binding.tvDataPrevious.text = data
+
         binding.btnGotoThird.setOnClickListener {
-            findNavController().navigate(R.id.second_to_third)
+            val bundle = Bundle().apply {
+                putParcelable("user", User(binding.edName.text.toString(), binding.edEmail.text.toString()))
+            }
+            findNavController().navigate(R.id.second_to_third, bundle)
         }
     }
 

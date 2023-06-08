@@ -12,7 +12,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor"> @color/tealgreen</item>
         <!-- Customize your theme here. -->
-        <item name="android:textColorSecondary">@color/white</item>
 
     </style>
 

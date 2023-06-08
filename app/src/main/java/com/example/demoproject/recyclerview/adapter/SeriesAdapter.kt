@@ -63,4 +63,11 @@ class SeriesAdapter : RecyclerView.Adapter<SeriesAdapter.ViewHolder>() {
         series.add(list)
         notifyItemChanged(series.count())
     }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun filterList(filteredList: MutableList<Series>) {
+        series.clear()
+        series.addAll(filteredList)
+        notifyDataSetChanged()
+    }
 }

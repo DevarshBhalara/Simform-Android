@@ -18,8 +18,9 @@
             app:destination="@id/mySecondFragment"
             app:enterAnim="@anim/enter_from_left"
             app:exitAnim="@anim/exit_to_right"
-            />
+            >
 
+        </action>
 
 
     </fragment>
@@ -31,12 +32,22 @@
         tools:layout="@layout/fragment_my_second"
         >
 
+        <deepLink app:uri="www.devarsh.com"
+            app:action="android.intent.action.MY_ACTION"
+        />
+
         <action
             android:id="@+id/second_to_third"
             app:destination="@id/myThirdFragment"
             app:enterAnim="@anim/enter_from_left"
             app:exitAnim="@anim/exit_to_right"
-            />
+            >
+
+        </action>
+        <argument
+            android:name="textData"
+            android:defaultValue="No"
+            app:argType="string" />
 
     </fragment>
 
@@ -54,11 +65,17 @@
             app:exitAnim="@anim/exit_to_right"
             />
 
+
         <action
             android:id="@+id/third_to_second"
             app:destination="@id/mySecondFragment"
             app:enterAnim="@anim/enter_from_left"
-            app:exitAnim="@anim/exit_to_right"/>
+            app:exitAnim="@anim/exit_to_right"
+           />
+        <argument
+            android:name="userData"
+            app:nullable="true"
+            app:argType="com.example.demoproject.activityintent.navgraph.User" />
 
     </fragment>
 

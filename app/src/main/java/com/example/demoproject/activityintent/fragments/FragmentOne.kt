@@ -59,6 +59,7 @@ class FragmentOne : Fragment() {
 
 
         binding.btnGotoSecond.setOnClickListener {
+
             val bundle = Bundle().apply {
                 putString("name", binding.edName.text.toString())
             }

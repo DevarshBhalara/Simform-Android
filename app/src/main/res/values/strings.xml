@@ -278,4 +278,13 @@
     <string name="this_is_third_fragment">This is Third Fragment</string>
     <string name="go_to_first">Go to First</string>
     <string name="item_one">Item One</string>
+    <string name="add_fragment_">Add Fragment</string>
+    <string name="search_fragment_">Search Fragment</string>
+    <string name="fragment_1">Fragment 1</string>
+    <string name="fragment_2">Fragment 2</string>
+    <string name="fragment_3">Fragment 3</string>
+    <string name="fragment_4">Fragment 4</string>
+    <string name="enter_text">Enter text</string>
+    <string name="data_from_previous">Data from previous</string>
+    <string name="name_">Name</string>
 </resources>
