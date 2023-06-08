@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/song"
+        android:icon="@drawable/music"
+        android:title="@string/song" />
+
+    <item
+        android:id="@+id/movieSeries"
+        android:icon="@drawable/baseline_tv_24"
+        android:title="@string/movieseries"/>
+
+    <item
+        android:id="@+id/series"
+        android:icon="@drawable/baseline_tv_24"
+        android:title="@string/series"/>
+
+</menu>

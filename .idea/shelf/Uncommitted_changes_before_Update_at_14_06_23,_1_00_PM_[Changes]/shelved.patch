@@ -1,0 +1,1543 @@
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieData.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieData.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieData.kt
+new file mode 100644
+--- /dev/null	(date 1686727034205)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieData.kt	(date 1686727034205)
+@@ -0,0 +1,3 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++data class CookieData(var size: Int, var hasChocolateChips: Boolean)
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Person.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Person.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Person.kt
+new file mode 100644
+--- /dev/null	(date 1686727034209)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Person.kt	(date 1686727034209)
+@@ -0,0 +1,7 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++class Person(name: String, lastname: String) {
++    var name: String by FormatDelegate()
++    var lastname: String by FormatDelegate()
++    var updateCount = 0
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Operation.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Operation.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Operation.kt
+new file mode 100644
+--- /dev/null	(date 1686727034208)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Operation.kt	(date 1686727034208)
+@@ -0,0 +1,6 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++enum class Operation {
++    ADDITION,
++    SUBTRACTION
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/User.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/User.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/User.kt
+new file mode 100644
+--- /dev/null	(date 1686727034209)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/User.kt	(date 1686727034209)
+@@ -0,0 +1,7 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++//storing in map
++class User(val map: Map<String, Any?>) {
++    val name: String by map
++    val age: Int by map
++}
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorVariable.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorVariable.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorVariable.kt
+new file mode 100644
+--- /dev/null	(date 1686727034205)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorVariable.kt	(date 1686727034205)
+@@ -0,0 +1,3 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++data class CalculatorVariable(var a: Int, var b: Int, val operation: Operation)
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieDelegate.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieDelegate.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieDelegate.kt
+new file mode 100644
+--- /dev/null	(date 1686727034205)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieDelegate.kt	(date 1686727034205)
+@@ -0,0 +1,6 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++fun main() {
++    val objBakery = Bakery(CookieShop())
++    objBakery.makeCookie()
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/properties/Properties.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/properties/Properties.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/properties/Properties.kt
+new file mode 100644
+--- /dev/null	(date 1686727034216)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/properties/Properties.kt	(date 1686727034216)
+@@ -0,0 +1,26 @@
++package com.example.demoproject.kotlinPractice.properties
++
++import android.hardware.Camera.Area
++import kotlin.math.roundToInt
++
++fun main() {
++
++    val objCircleArea = AreaCircle(2.5f)
++    println(objCircleArea.area)
++
++    objCircleArea.printDetails()
++    objCircleArea.counter = 10
++    objCircleArea.printDetails()
++
++    AreaCircle.kindOfStatic()
++    println(AreaCircle.varInComp)
++//    println(objCircleArea.testLate)
++
++    var objCheck = CheckingOverride(10f)
++    println(objCheck.counter)
++}
++
++class CheckingOverride(r: Float) : AreaCircle(r) {
++    override var counter: Int = 10
++
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/properties/AreaCircle.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/properties/AreaCircle.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/properties/AreaCircle.kt
+new file mode 100644
+--- /dev/null	(date 1686727034216)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/properties/AreaCircle.kt	(date 1686727034216)
+@@ -0,0 +1,30 @@
++package com.example.demoproject.kotlinPractice.properties
++
++import kotlin.math.PI
++
++open class AreaCircle(val radius: Float) {
++    val area
++        get() = this.radius * this.radius * PI
++
++    //late init var testLateInit: Int = 0 not allowed on primitive type
++    lateinit var testLate: String
++
++    open var counter = 0
++        set(value) {
++            println("set called")
++            if(value >= 0)
++                field = value
++            println("$counter")
++        }
++
++    fun printDetails() {
++        println("Value of counter is $counter")
++    }
++
++    companion object {
++        var varInComp = 0
++        fun kindOfStatic() {
++            println("this is inside companion object")
++        }
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Derived.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Derived.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Derived.kt
+new file mode 100644
+--- /dev/null	(date 1686727034206)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Derived.kt	(date 1686727034206)
+@@ -0,0 +1,3 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++class Derived(b: Base) : Base by b
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/GetterSetterPropertyExample.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/GetterSetterPropertyExample.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/GetterSetterPropertyExample.kt
+new file mode 100644
+--- /dev/null	(date 1686727034208)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/GetterSetterPropertyExample.kt	(date 1686727034208)
+@@ -0,0 +1,17 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++import kotlin.properties.ReadWriteProperty
++import kotlin.reflect.KProperty
++
++fun main() {
++    val objPerson = Person("devarsh", "bhalara")
++    objPerson.name = "devarsh"
++    objPerson.lastname = "bhalara"
++    println(objPerson.name)
++    println("total updated  ${objPerson.updateCount} times")
++
++
++}
++
++
++
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieInterface.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieInterface.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieInterface.kt
+new file mode 100644
+--- /dev/null	(date 1686727034206)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieInterface.kt	(date 1686727034206)
+@@ -0,0 +1,7 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++interface CookieInterface {
++    fun cookieWasBacked(cookie: CookieData)
++    fun preferredCookieSize(size: Int): Int
++    fun hasChocoChips(cookie: CookieData): Boolean
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Base.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Base.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Base.kt
+new file mode 100644
+--- /dev/null	(date 1686727034203)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Base.kt	(date 1686727034203)
+@@ -0,0 +1,5 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++interface Base{
++    fun printMe()
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Delegation.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Delegation.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Delegation.kt
+new file mode 100644
+--- /dev/null	(date 1686727034206)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Delegation.kt	(date 1686727034206)
+@@ -0,0 +1,32 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++import kotlin.properties.Delegates
++
++val demoLazy: String by lazy {
++    println("Call lazy")
++    "Hello"
++}
++
++fun main() {
++    val bObj = BaseImpl(10)
++    Derived(bObj).printMe()
++
++    bObj.str = "Assinging value"
++    bObj.str = "New value"
++
++    println(demoLazy)
++    println(demoLazy)
++    println(demoLazy)
++
++    val userObj = User(
++        mapOf(
++            "name" to "Abc",
++            "age" to 10
++        )
++    )
++
++    println(userObj.name)
++    println(userObj.age)
++}
++
++
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/FormatDelegate.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/FormatDelegate.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/FormatDelegate.kt
+new file mode 100644
+--- /dev/null	(date 1686727034207)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/FormatDelegate.kt	(date 1686727034207)
+@@ -0,0 +1,20 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++import kotlin.properties.ReadWriteProperty
++import kotlin.reflect.KProperty
++
++class FormatDelegate : ReadWriteProperty<Any?, String> {
++    private var str: String = ""
++    override fun getValue(thisRef: Any?, property: KProperty<*>): String {
++        println("Getter called")
++        return str
++    }
++
++    override fun setValue(thisRef: Any?, property: KProperty<*>, value: String) {
++        println("Setter called")
++        if (thisRef is Person) {
++            thisRef.updateCount++
++        }
++        str = value.lowercase().capitalize()
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieShop.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieShop.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieShop.kt
+new file mode 100644
+--- /dev/null	(date 1686727034206)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CookieShop.kt	(date 1686727034206)
+@@ -0,0 +1,20 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++class CookieShop : CookieInterface {
++
++    override fun cookieWasBacked(cookie: CookieData) {
++        println("Cookie was backed with size ${cookie.size}")
++    }
++
++    override fun preferredCookieSize(size: Int): Int {
++        return if (size > 12) {
++            12
++        } else {
++            size
++        }
++    }
++
++    override fun hasChocoChips(cookie: CookieData): Boolean {
++        return cookie.hasChocolateChips
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalcDelegationCalling.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalcDelegationCalling.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalcDelegationCalling.kt
+new file mode 100644
+--- /dev/null	(date 1686727034204)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalcDelegationCalling.kt	(date 1686727034204)
+@@ -0,0 +1,14 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++fun main() {
++    val objCalculatorBase = CalculatorBase()
++    val objEnahanceCalc = EnahanceCalc(objCalculatorBase)
++
++    val addAns = objEnahanceCalc.add(CalculatorVariable(20, 10, Operation.ADDITION))
++    println(addAns)
++
++//    val subAns = objEnahanceCalc.sub(CalculatorVariable(20, 10, Operation.SUBTRACTION))
++
++    objEnahanceCalc.performOperation(CalculatorVariable(20, 10, Operation.SUBTRACTION))
++
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/AccessingExtensionFunction.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/AccessingExtensionFunction.java b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/AccessingExtensionFunction.java
+new file mode 100644
+--- /dev/null	(date 1686727034202)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/AccessingExtensionFunction.java	(date 1686727034202)
+@@ -0,0 +1,2 @@
++package com.example.demoproject.kotlinPractice;
++
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorBase.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorBase.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorBase.kt
+new file mode 100644
+--- /dev/null	(date 1686727034204)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorBase.kt	(date 1686727034204)
+@@ -0,0 +1,14 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++class CalculatorBase : CalculatorInterface {
++
++    override fun add(data: CalculatorVariable): Int {
++        println("From CalculatorBase addition")
++        return data.a + data.b
++    }
++
++    override fun sub(data: CalculatorVariable): Int {
++        println("From CalculatorBase subtraction")
++        return data.a - data.b
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorInterface.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorInterface.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorInterface.kt
+new file mode 100644
+--- /dev/null	(date 1686727034204)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/CalculatorInterface.kt	(date 1686727034204)
+@@ -0,0 +1,8 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++interface CalculatorInterface {
++
++    fun add(data: CalculatorVariable): Int
++    fun sub(data: CalculatorVariable): Int
++}
++
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/BaseImpl.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/BaseImpl.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/BaseImpl.kt
+new file mode 100644
+--- /dev/null	(date 1686727034203)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/BaseImpl.kt	(date 1686727034203)
+@@ -0,0 +1,14 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++import kotlin.properties.Delegates
++
++
++class BaseImpl(val x: Int) : Base {
++    var str: String by Delegates.observable("Currently no value"){ props, old, new ->
++        println("$old -> $new")
++    }
++
++    override fun printMe() {
++        println(x)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/EnahanceCalc.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/EnahanceCalc.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/EnahanceCalc.kt
+new file mode 100644
+--- /dev/null	(date 1686727034207)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/EnahanceCalc.kt	(date 1686727034207)
+@@ -0,0 +1,22 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++class EnahanceCalc(delegate: CalculatorInterface) : CalculatorInterface by delegate {
++    private var ans = 0
++    fun performOperation(calculatorVariable: CalculatorVariable) {
++        println("Called")
++        val operation = calculatorVariable.operation
++
++        when (operation) {
++            Operation.ADDITION -> {
++                ans = add(calculatorVariable)
++                println(ans)
++            }
++            Operation.SUBTRACTION -> {
++                ans = sub(calculatorVariable)
++                println(ans)
++            }
++        }
++
++    }
++}
++
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Bakery.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Bakery.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Bakery.kt
+new file mode 100644
+--- /dev/null	(date 1686727034203)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/Delegation/Bakery.kt	(date 1686727034203)
+@@ -0,0 +1,10 @@
++package com.example.demoproject.kotlinPractice.Delegation
++
++class Bakery(private val delegate: CookieInterface) : CookieInterface by delegate {
++
++    fun makeCookie() {
++        val cookieSize: Int = 14
++        val cookie = CookieData(preferredCookieSize(cookieSize), true)
++        cookieWasBacked(cookie)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/java_practice/ObjectCreate.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/java_practice/ObjectCreate.java b/app/src/main/java/com/example/demoproject/java_practice/ObjectCreate.java
+new file mode 100644
+--- /dev/null	(date 1686727034180)
++++ b/app/src/main/java/com/example/demoproject/java_practice/ObjectCreate.java	(date 1686727034180)
+@@ -0,0 +1,12 @@
++package com.example.demoproject.java_practice;
++
++public class ObjectCreate {
++    public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
++        Test a = new Test();
++        Test objTest = (Test) Class.forName("Test").newInstance();
++//        Test objTest2 = (Test) a.clone();
++    }
++}
++class Test {
++
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/java_practice/LambdaExpression.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/java_practice/LambdaExpression.java b/app/src/main/java/com/example/demoproject/java_practice/LambdaExpression.java
+new file mode 100644
+--- /dev/null	(date 1686727034179)
++++ b/app/src/main/java/com/example/demoproject/java_practice/LambdaExpression.java	(date 1686727034179)
+@@ -0,0 +1,67 @@
++package com.example.demoproject.java_practice;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class LambdaExpression {
++    public static void main(String[] args) {
++        Draw objD = () -> {
++            System.out.println("draw() method");
++        };
++        objD.draw();
++
++        Add objAdd = (a,b) -> {
++            return a + b;
++        };
++        System.out.println("Addition is : " + objAdd.add(10,20));
++
++        List<String> newList = new ArrayList<String>();
++        newList.add("One");
++        newList.add("Two");
++        newList.add("Three");
++
++        newList.forEach(
++                n -> System.out.println(n)
++        );
++
++        ClassPassingLambdaAsArgument objClass = new ClassPassingLambdaAsArgument();
++
++        boolean result = objClass.check((x) ->  { System.out.println("Inside Main methods"); return (x%2) == 0; } , 10);
++        System.out.println( "Result is " + result);
++
++        String passSomething = "My name is Devarsh";
++        objClass.checkPrintSomethings( (str) -> { System.out.println("Passed argument is : " + str); } , passSomething  );
++
++
++    }
++}
++interface Draw{
++    void draw();
++}
++
++interface Add {
++    int add(int a, int b);
++}
++
++//passing lambda as argument
++class ClassPassingLambdaAsArgument{
++    boolean check(PassingLambdaAsArgument lambdaVariable, int b){
++        System.out.println("Inside Class methods");
++        System.out.println(lambdaVariable);
++        return lambdaVariable.test(b);
++    }
++
++    void checkPrintSomethings(PrintSomething printSomething, String str){
++        System.out.println("Inside checkPrintSomething");
++        printSomething.printSomethingMethod(str);
++    }
++
++}
++@FunctionalInterface
++interface PassingLambdaAsArgument{
++    boolean test(int a);
++}
++
++interface PrintSomething{
++    void printSomethingMethod(String str);
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/java_practice/InterfaceAndAbstract.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/java_practice/InterfaceAndAbstract.java b/app/src/main/java/com/example/demoproject/java_practice/InterfaceAndAbstract.java
+new file mode 100644
+--- /dev/null	(date 1686727034178)
++++ b/app/src/main/java/com/example/demoproject/java_practice/InterfaceAndAbstract.java	(date 1686727034178)
+@@ -0,0 +1,20 @@
++package com.example.demoproject.java_practice;
++
++public class InterfaceAndAbstract {
++    public static void main(String[] args) {
++        Rectangle objRectangle = new Rectangle();
++        objRectangle.calculateArea(20,20);
++    }
++}
++
++class Rectangle implements PolygonShape {
++
++    @Override
++    public void calculateArea(int length, int breadth) {
++        System.out.println("Are is " + length * breadth);
++    }
++}
++
++interface PolygonShape {
++    void calculateArea(int length, int breadth);
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/java_practice/CollectionTypes.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/java_practice/CollectionTypes.java b/app/src/main/java/com/example/demoproject/java_practice/CollectionTypes.java
+new file mode 100644
+--- /dev/null	(date 1686727034174)
++++ b/app/src/main/java/com/example/demoproject/java_practice/CollectionTypes.java	(date 1686727034174)
+@@ -0,0 +1,93 @@
++package com.example.demoproject.java_practice;
++
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.LinkedHashMap;
++import java.util.Map;
++import java.util.Scanner;
++import java.util.TreeMap;
++
++public class CollectionTypes {
++    public static void main(String[] args) {
++
++
++        /* Arraylist */
++        ArrayList<String> cars = new ArrayList<String>(3);
++//        System.out.println(cars.size() + " " + cars.get(0));
++        cars.add("Volvo");
++        cars.add("BMW");
++        cars.add("BMW");
++        cars.add("Mazda");
++        System.out.println(cars);
++
++        int newCar;
++        Scanner sc = new Scanner(System.in);
++        System.out.println("How many new car you want to add ? ");
++        newCar = sc.nextInt();
++
++        for (int i=1; i<=newCar; i++) {
++            System.out.println("Enter new car name : ");
++            String car = sc.next();
++            System.out.println("New car is " + car);
++            cars.add(car);
++        }
++        System.out.println(cars);
++
++        cars.add(2, "New");
++
++        ArrayList<String> arrayList2 = new ArrayList<>();
++        arrayList2.add("New1");
++        arrayList2.add("New2");
++
++        cars.addAll(arrayList2);
++
++        System.out.println(cars.contains("BMW"));
++
++        ArrayList<String> arrayList3 = new ArrayList<String>();
++        arrayList3 = (ArrayList<String>) cars.clone();
++
++        System.out.println("index of BMW is : " + cars.indexOf("BMW"));
++        System.out.println("last index of BMW is : " + cars.lastIndexOf("BMW"));
++        for (int i=0; i<cars.size(); i++)
++            System.out.println(cars.get(i));
++
++        cars.removeAll(arrayList2);
++        System.out.println(cars);
++
++        /* Map */
++
++        Map<String, Integer> map = new HashMap<String, Integer>();
++        map.put("BMW", 5000000);
++        map.put("A6",4000000);
++        map.put("A4",4000000);
++        map.put("A7",4000000);
++        map.put("E-tron",4000000);
++
++        System.out.println(map);
++
++        //LinkedHashMap track insertion order
++        Map<String, Integer> linkedMap = new LinkedHashMap<String, Integer>();
++        linkedMap.put("BMW", 5000000);
++        linkedMap.put("A6",4000000);
++        linkedMap.put("A4",4000000);
++        linkedMap.put("A7",4000000);
++        linkedMap.put("E-tron",4000000);
++
++        System.out.println(linkedMap);
++
++        Map<String, Integer> treeMap = new TreeMap<String, Integer>();
++        treeMap.put("BMW", 5000000);
++        treeMap.put("A6",4000000);
++        treeMap.put("A4",4000000);
++        treeMap.put("A7",4000000);
++        treeMap.put("E-tron",4000000);
++
++        treeMap.remove("BMW");
++        for (Map.Entry mapElement : treeMap.entrySet()){
++            String key = (String) mapElement.getKey();
++            int values = (int) mapElement.getValue();
++            System.out.println(key + " " + values);
++        }
++        System.out.println(treeMap);
++    }
++}
+Index: app/src/main/java/com/example/demoproject/java_practice/ControlFlowDecisionMaking.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/java_practice/ControlFlowDecisionMaking.java b/app/src/main/java/com/example/demoproject/java_practice/ControlFlowDecisionMaking.java
+new file mode 100644
+--- /dev/null	(date 1686727034176)
++++ b/app/src/main/java/com/example/demoproject/java_practice/ControlFlowDecisionMaking.java	(date 1686727034176)
+@@ -0,0 +1,38 @@
++package com.example.demoproject.java_practice;
++
++public class ControlFlowDecisionMaking {
++    public static void main(String[] args) {
++        int a = 10;
++        int b = 20;
++
++        if (a < b) {
++            System.out.println("a is small");
++        }else{
++            System.out.println("B is small");
++        }
++
++        int num = 20;
++        switch(num) {
++            case 5 :  System.out.println("It is 5");
++
++            case 10 : System.out.println("It is 10");
++
++            case 15 : System.out.println("It is 15");
++
++        }
++
++
++        for (int i = 0; i <= 10 ;i++){
++            if (i % 2 == 0)
++                continue;
++
++            System.out.println(i);
++        }
++
++        int count = 0;
++        while (count <= 10){
++            System.out.println(count);
++            count++;
++        }
++    }
++}
+Index: app/src/main/java/com/example/demoproject/java_practice/JavaBasics.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/java_practice/JavaBasics.java b/app/src/main/java/com/example/demoproject/java_practice/JavaBasics.java
+new file mode 100644
+--- /dev/null	(date 1686727034179)
++++ b/app/src/main/java/com/example/demoproject/java_practice/JavaBasics.java	(date 1686727034179)
+@@ -0,0 +1,82 @@
++
++public class JavaBasics implements DefaultExample {
++    public static void main(String[] args){
++        System.out.println("Hello");
++
++        Dog objDog = new Dog();
++        objDog.bark();
++        objDog.eat();
++
++
++        Bike b = new Splendor();//upcasting
++        b.run();
++
++        CalculateAverage objStudent1 = new CalculateAverage("Devarsh",60,70,66);
++        objStudent1.calcAverage();
++
++        //default method interface
++        JavaBasics objJavaBasics = new JavaBasics();
++        objJavaBasics.methodDefault();
++
++
++    }
++}
++class Student{
++    String name;
++    int erNo;
++    int subOneMark;
++    int subTwoMark;
++    int subThreeMark;
++
++    Student(String name, int subOneMark, int subTwoMark, int subThreeMark){
++        this.name = name;
++        this.subOneMark = subOneMark;
++        this.subTwoMark = subTwoMark;
++        this.subThreeMark = subThreeMark;
++    }
++}
++class CalculateAverage extends Student {
++
++    CalculateAverage(String name, int subOneMark, int subTwoMark, int subThreeMark) {
++        super(name, subOneMark, subTwoMark, subThreeMark);
++    }
++
++    void calcAverage(){
++        float percentage = ( this.subOneMark + this.subTwoMark + this.subThreeMark ) / 3  ;
++        System.out.println("Avearge is " + percentage);
++    }
++}
++
++interface DefaultExample{
++    default void methodDefault() {
++        System.out.println("This is default method");
++    }
++}
++
++class Animal{
++    void eat(){
++        System.out.println("eatingg..");
++    }
++}
++class Dog extends  Animal {
++    void bark(){
++        System.out.println("barking...");
++    }
++}
++class Cat extends  Animal {
++    void meow(){
++        System.out.println("mewowwwww");
++    }
++}
++
++//overriding
++class Bike{
++    void run(){
++        System.out.println("running");
++    }
++}
++class Splendor extends Bike{
++    void run(){
++        System.out.println("running safely with 60km");
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/AccessingExtensionFunction.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/AccessingExtensionFunction.java b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/AccessingExtensionFunction.java
+new file mode 100644
+--- /dev/null	(date 1686727034210)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/AccessingExtensionFunction.java	(date 1686727034210)
+@@ -0,0 +1,8 @@
++package com.example.demoproject.kotlinPractice.functionAndExtension;
++
++public class AccessingExtensionFunction {
++    public static void main(String[] args) {
++        Math objm = new Math();
++        FunctionsKt.addition(objm,10,20);
++    }
++}
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Functions.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Functions.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Functions.kt
+new file mode 100644
+--- /dev/null	(date 1686727034211)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Functions.kt	(date 1686727034211)
+@@ -0,0 +1,117 @@
++package com.example.demoproject.kotlinPractice.functionAndExtension
++
++fun Math.addition(a: Int, b: Int): Int {
++//    println(aaa) can't access private property
++    return a + b
++}
++
++//infix extension
++infix fun Math.addTenNum(a: Int): Int {
++    println("Infix function extension called")
++    return a + 10
++}
++
++//inline function
++inline fun myInline(myF: () -> Unit) {
++    myF()
++    println("inline function called")
++}
++
++//inline with two arguments
++inline fun myInlineTwo( myFunctionOne: (String) -> Unit,
++                                        myFunctionTwo: (Int, Int) -> Int
++) {
++
++    myFunctionOne("My name is devarsh (from two inline parameter)")
++    println("From in line ${myFunctionTwo(10, 20)}")
++}
++
++//generic function
++fun <T> genericExample(vararg array: T) {
++    val list = ArrayList<T>()
++    array.forEach {
++        list.add(it)
++    }
++    println(list)
++}
++
++fun main() {
++    val m = Math()
++
++    // call using infix notation
++    val result = m square 3
++    println("The square of a number is: $result")
++
++    //calling extension method
++    val addAns = m.addition(10, 20)
++    println(addAns)
++
++    //calling infix extension function
++    val addTenAns = m addTenNum 20
++    println(addTenAns)
++
++    //calling in line function
++    myInline { println("Calling") }
++
++    //calling inline with two parameter
++    myInlineTwo(
++        {
++            println(it)
++            return
++        },
++        { a: Int, b: Int -> a + b },
++
++        )
++
++    //calling generic function
++    genericExample(1, 2, 3, 4, 5)
++    genericExample("a", "b", "c", "d")
++
++//    var arryIntList: ArrayList<Int> = arrayListOf<Int>(10, 20)
++//
++
++
++    //accessing
++    val objTemperature = Temperature(32f, 20)
++    println("Temperature in Celsius is " + objTemperature.tempInCelsius)
++
++    println("Temperature in Fahrenheit is " + objTemperature.tempInFahrenheit)
++
++    //lambda
++    val sum: (Int, Int) -> Int = { a: Int, b: Int -> a + b }
++    println(sum(10, 20))
++
++    val sum2 = { x: Int, y: Int -> x + y }
++    sum2(19, 29)
++
++    returnFunction()
++
++
++}
++
++fun returnFunction() {
++
++    fun test(a: Int) {
++        println("Nested function called with value of $a")
++    }
++
++    return test(10)
++}
++
++//fun test2() -> (Int) -> Int {
++//    println()
++//}
++
++
++//extension property
++//property with getter setter only extended
++var Temperature.tempInFahrenheit: Float
++    get() = (tempInCelsius * 9) / 5
++    set(value) {
++        //    println(temp)
++        tempInCelsius = (value - 32) * 5 / 9
++    }
++
++//fun Temperature.testPrivate () {
++//    println(temp)
++//}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Temperature.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Temperature.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Temperature.kt
+new file mode 100644
+--- /dev/null	(date 1686727034215)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Temperature.kt	(date 1686727034215)
+@@ -0,0 +1,3 @@
++package com.example.demoproject.kotlinPractice.functionAndExtension
++
++class Temperature(var tempInCelsius: Float, private var temp: Int)
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/java_practice/Enumaration.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/java_practice/Enumaration.java b/app/src/main/java/com/example/demoproject/java_practice/Enumaration.java
+new file mode 100644
+--- /dev/null	(date 1686727034176)
++++ b/app/src/main/java/com/example/demoproject/java_practice/Enumaration.java	(date 1686727034176)
+@@ -0,0 +1,88 @@
++package com.example.demoproject.java_practice;
++
++enum Day {
++    SUNDAY,
++    MONDAY,
++    TUESDAY,
++    WEDNESDAY,
++    THURSDAY,
++    FRIDAY,
++    SATURDAY;
++
++
++}
++public class Enumaration {
++
++    Day day;
++
++    Enumaration(Day day){
++        this.day = day;
++    }
++    public void isDayLike() {
++        switch (day) {
++            case MONDAY:
++                System.out.println("Mondays are bad.");
++                break;
++            case FRIDAY:
++                System.out.println("Fridays are better.");
++                break;
++            case SATURDAY:
++            case SUNDAY:
++                System.out.println("Weekends are best.");
++                break;
++            default:
++                System.out.println("Midweek days are so-so.");
++                break;
++        }
++    }
++
++    public static void main(String[] args) {
++        Color objColor = Color.RED;
++        System.out.println(objColor);
++
++        String str = "MONDAY";
++        Enumaration objEnum = new Enumaration(Day.valueOf(str));
++        objEnum.isDayLike();
++
++        Day arr[] = Day.values();
++        for(Day day: arr) {
++            System.out.println(day + " at index " + day.ordinal() );
++        }
++
++        //with value
++        Fruit arrFruit[] = Fruit.values();
++
++        for(Fruit f : arrFruit) {
++            System.out.println("Color of " + f + " is " + f.getColor());
++        }
++
++    }
++}
++enum Color {
++    RED,
++    GREEN,
++    BLUE;
++
++    Color() {
++        System.out.println("Constructor called for " + this.toString());
++    }
++    public void colorInfo() {
++        System.out.println("Colorrrrr");
++    }
++}
++
++enum Fruit {
++    APPLE("RED"),
++    BANANA("YELLOW");
++
++    private String color;
++
++    Fruit(String color) {
++        this.color = color;
++    }
++
++    public String  getColor() {
++            return this.color;
++    }
++}
++
+Index: app/src/main/java/com/example/demoproject/java_practice/ExceptionHandling.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/java_practice/ExceptionHandling.java b/app/src/main/java/com/example/demoproject/java_practice/ExceptionHandling.java
+new file mode 100644
+--- /dev/null	(date 1686727034177)
++++ b/app/src/main/java/com/example/demoproject/java_practice/ExceptionHandling.java	(date 1686727034177)
+@@ -0,0 +1,88 @@
++package com.example.demoproject.java_practice;
++
++import java.io.File;
++import java.io.FileNotFoundException;
++import java.util.ArrayList;
++import java.util.List;
++
++public class ExceptionHandling {
++    public static void main(String[] args) throws FileNotFoundException {
++        try {
++            int a = 100/0;
++        }catch (ArithmeticException e){
++            System.out.println(e);
++        }
++        ArrayList<FileInfo> listFileInfo = new ArrayList<FileInfo>();
++        listFileInfo.add(new FileInfo("Project.txt",1,10));
++        listFileInfo.add(new FileInfo("Project2.txt",1,80));
++        listFileInfo.add(new FileInfo("Project3.txt",0,20));
++        listFileInfo.add(new FileInfo("Project4.txt",1,40));
++
++        FileInfo objInfo = new FileInfo();
++        try {
++            objInfo.getFileByName("Project6.txt", listFileInfo);
++            objInfo.isReadable("Project7.txt", listFileInfo);
++        }catch (FileNotFoundException e){
++            System.out.println("File not Found");
++        }catch (NotReadableException e){
++            System.out.println("This file is not Readable");
++        }
++
++    }
++
++
++}
++
++class FileInfo{
++    String name;
++    int isReadable;
++    int size;
++
++    FileInfo(String name, int isReadable, int size ) {
++        this.name = name;
++        this.isReadable = isReadable;
++        this.size = size;;
++    }
++
++    public FileInfo() {
++
++    }
++
++    void getFileByName(String name, ArrayList<FileInfo> info) throws FileNotFoundException {
++        int flag = 0;
++        for (FileInfo fileInfo : info) {
++
++            if(fileInfo.name.equals(name)){
++                System.out.println("Found file");
++                flag = 1;
++                break;
++            }
++        }
++        if (flag == 0){
++            throw new FileNotFoundException();
++        }
++    }
++
++    void isReadable(String name, ArrayList<FileInfo> info) throws NotReadableException, FileNotFoundException {
++
++        int flag = 0;
++        for (FileInfo fileInfo: info){
++            if(fileInfo.name.equals(name)){
++                flag = 1;
++                if (fileInfo.isReadable == 0){
++                    throw new NotReadableException();
++                }
++            }
++        }
++        if (flag == 0){
++            throw new FileNotFoundException();
++        }
++
++    }
++}
++
++class NotReadableException extends  Exception {
++    public NotReadableException(){
++        super();
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/java_practice/Operator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/java_practice/Operator.java b/app/src/main/java/com/example/demoproject/java_practice/Operator.java
+new file mode 100644
+--- /dev/null	(date 1686727034180)
++++ b/app/src/main/java/com/example/demoproject/java_practice/Operator.java	(date 1686727034180)
+@@ -0,0 +1,31 @@
++package com.example.demoproject.java_practice;
++
++import java.util.Scanner;
++
++public class Operator {
++    public static void main(String[] args) {
++        Scanner sc = new Scanner(System.in);
++
++        float a;
++        float b;
++
++        a = sc.nextInt();
++        b = sc.nextInt();
++
++        System.out.println(a+b);
++        System.out.println(a-b);
++        System.out.println(a*b);
++        System.out.println(a/b);
++
++        if (a == b) {
++            System.out.println("Equal");
++        }else {
++            System.out.println("Not equal");
++        }
++
++        int varC = 5;
++        int varD = 7;
++
++        System.out.println((varC & varD));
++    }
++}
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/DemoOutSideSealed.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/DemoOutSideSealed.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/DemoOutSideSealed.kt
+new file mode 100644
+--- /dev/null	(date 1686727034218)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/DemoOutSideSealed.kt	(date 1686727034218)
+@@ -0,0 +1,7 @@
++package com.example.demoproject.kotlinPractice.sealedClass
++
++class DemoOutSideSealed : SealedClassDemoNetflix() {
++    fun testDemoOut() {
++        println("Method of DemoOut")
++    }
++}
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/SealedClassDemo.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/SealedClassDemo.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/SealedClassDemo.kt
+new file mode 100644
+--- /dev/null	(date 1686727034218)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/SealedClassDemo.kt	(date 1686727034218)
+@@ -0,0 +1,29 @@
++package com.example.demoproject.kotlinPractice.sealedClass
++
++fun checkMovieOrSeries(check: SealedClassDemoNetflix) {
++    when (check) {
++        is SealedClassDemoNetflix.Series -> println("This is Series")
++        is SealedClassDemoNetflix.Movie -> println("This is Movie")
++        else -> {
++            println("This is nothing!")
++        }
++    }
++}
++
++fun main() {
++    val objSeries =
++        SealedClassDemoNetflix.Series("The Boys", 3, 8.6f, SealedClassDemoNetflix.Types.CRIME)
++    objSeries.printSeriesDetails()
++
++    val objMovie = SealedClassDemoNetflix.Movie("Dhol", 8f)
++    objMovie.printMovieDetails()
++
++    val objTest = SealedClassDemoNetflix.Test()
++    objTest.testMethod()
++
++    val objTest2 = DemoOutSideSealed()
++    objTest.testMethod()
++
++    checkMovieOrSeries(objSeries)
++}
++
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/ScopeFunctions.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/ScopeFunctions.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/ScopeFunctions.kt
+new file mode 100644
+--- /dev/null	(date 1686727034217)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/ScopeFunctions.kt	(date 1686727034217)
+@@ -0,0 +1,58 @@
++package com.example.demoproject.kotlinPractice.scopedFunction
++
++fun main() {
++
++    //let
++    val numbers = mutableListOf("One", "Two", "Three", "Four", "Five")
++    numbers.map { it.length }.filter { it > 3 }.let { println(it) }
++
++    val list = mutableListOf(6, 1, 5, 2, 4, 3)
++    list.filter {
++        println("Filter called")
++        it % 2 == 0
++    }
++        .sortedBy {
++            println("Inside sort")
++            it
++        }
++        .let {
++            println("Sorted even numbers are : $it")
++        }
++
++    //with
++
++    val employee: Employee = Employee()
++    val objEmployee = with(employee) {
++        this.firstName = "Abc"
++        this.age = 25
++
++        "Name is $firstName and age is $age"
++    }
++
++    val emp2 = Employee().apply {
++        this.firstName = "Test"
++        this.age = 34
++    }
++    println(emp2.age)
++    println(objEmployee)
++    println(employee.firstName)
++
++    employee.run {
++        this.firstName = "New"
++        println(this.firstName)
++    }
++
++
++    val person = Person()
++    val personInfo: String = with(person) {
++        println(this.firstName)
++        println(this.age)
++        age + 10
++        "I love the game of football"  //this well be stored in variable personInfo
++    }
++    println("Person info $personInfo")
++
++
++}
++
++
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/SealedClassDemoNetflix.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/SealedClassDemoNetflix.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/SealedClassDemoNetflix.kt
+new file mode 100644
+--- /dev/null	(date 1686727034218)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/sealedClass/SealedClassDemoNetflix.kt	(date 1686727034218)
+@@ -0,0 +1,36 @@
++package com.example.demoproject.kotlinPractice.sealedClass
++
++sealed class SealedClassDemoNetflix {
++    var count = 10
++
++    enum class Types {
++        THRILLER,
++        COMEDY,
++        CRIME,
++        ACTION,
++    }
++
++    class Series(
++        val name: String,
++        val seasonCount: Int,
++        val seriesRating: Float,
++        val seriesType: SealedClassDemoNetflix.Types
++    ) : SealedClassDemoNetflix() {
++        fun printSeriesDetails() {
++            println(count)
++            println("Series name : $name, Total seasons are $seasonCount, ratings are $seriesRating, series type is $seriesType")
++        }
++    }
++
++    class Movie(val movieName: String, val movieRating: Float) : SealedClassDemoNetflix() {
++        fun printMovieDetails() {
++            println("Movie name is : $movieName, Movie rating is : $movieRating")
++        }
++    }
++
++    class Test() {
++        fun testMethod() {
++            println("Somethings")
++        }
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/Person.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/Person.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/Person.kt
+new file mode 100644
+--- /dev/null	(date 1686727034217)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/Person.kt	(date 1686727034217)
+@@ -0,0 +1,6 @@
++package com.example.demoproject.kotlinPractice.scopedFunction
++
++class Person {
++    var firstName: String = "Elena Wilson"
++    var age: Int = 28
++}
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/Employee.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/Employee.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/Employee.kt
+new file mode 100644
+--- /dev/null	(date 1686727034216)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/scopedFunction/Employee.kt	(date 1686727034216)
+@@ -0,0 +1,9 @@
++package com.example.demoproject.kotlinPractice.scopedFunction
++
++class Employee(
++    var firstName: String = "",
++
++) {
++    var age: Int = 0
++}
++
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/PracticeInline.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/PracticeInline.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/PracticeInline.kt
+new file mode 100644
+--- /dev/null	(date 1686727034215)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/PracticeInline.kt	(date 1686727034215)
+@@ -0,0 +1,20 @@
++package com.example.demoproject.kotlinPractice.functionAndExtension
++
++inline fun myInlineTwo2(
++    myFunctionOne: (String) -> Unit,
++    myFunctionTwo: (Int, Int) -> Int
++) {
++
++    myFunctionOne("My name is devarsh (from two inline parameter)")
++    println("From in line ${myFunctionTwo(10, 20)}")
++}
++
++fun main() {
++    myInlineTwo2(
++        {
++            println(it)
++        },
++        { a: Int, b: Int -> a + b },
++
++        )
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Math.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Math.kt b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Math.kt
+new file mode 100644
+--- /dev/null	(date 1686727034215)
++++ b/app/src/main/java/com/example/demoproject/kotlinPractice/kotlinadvancetwo/functionAndExtension/Math.kt	(date 1686727034215)
+@@ -0,0 +1,11 @@
++package com.example.demoproject.kotlinPractice.functionAndExtension
++
++class Math {
++    private var aaa = 10
++    // user defined infix member function
++    infix fun square(n: Int): Int {
++        val num = n * n
++        return num
++    }
++}
++
