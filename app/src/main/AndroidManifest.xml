@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools">
 
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.INTERNET" />
 
 <application
     android:allowBackup="true"
@@ -30,7 +30,7 @@ xmlns:tools="http://schemas.android.com/tools">
 
     </activity>
 
-    <receiver android:name=".activityintent.MyReceiver"> </receiver>
+    <receiver android:name=".activityintent.MyReceiver"></receiver>
 
     <activity
         android:name=".activityintent.navgraph.ActivityBottomNavGraph"
@@ -44,11 +44,6 @@ xmlns:tools="http://schemas.android.com/tools">
         android:theme="@style/Theme.DemoProject">
         <nav-graph android:value="@navigation/nav_graph" />
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
 
         <intent-filter tools:ignore="AppLinkUrlError">
             <action android:name="android.intent.action.VIEW" />
@@ -64,21 +59,22 @@ xmlns:tools="http://schemas.android.com/tools">
 
     </activity>
 
-    <activity android:name=".searchview.ActivitySearchView"
+    <activity
+        android:name=".searchview.ActivitySearchView"
         android:exported="true"
-        android:theme="@style/Theme.DemoProject"
-        >
+        android:theme="@style/Theme.DemoProject">
+
 
     </activity>
 
     <activity
         android:name=".activityintent.ActivityCamera"
         android:exported="true"
-        android:theme="@style/Theme.DemoProject"> </activity>
+        android:theme="@style/Theme.DemoProject"></activity>
     <activity
         android:name=".activityintent.bottomnavigation.ActivityBottomNavFragment"
         android:exported="true"
-        android:theme="@style/Theme.DemoProject"> </activity>
+        android:theme="@style/Theme.DemoProject"></activity>
 
     <provider
         android:name="androidx.core.content.FileProvider"
@@ -118,7 +114,7 @@ xmlns:tools="http://schemas.android.com/tools">
     <activity
         android:name=".activityintent.fragments.ActivityFragments"
         android:exported="true"
-        android:theme="@style/Theme.DemoProject"> </activity>
+        android:theme="@style/Theme.DemoProject"></activity>
     <activity
         android:name=".activityintent.ActivityImplicitIntent"
         android:theme="@style/Theme.DemoProject" />
@@ -149,8 +145,36 @@ xmlns:tools="http://schemas.android.com/tools">
         android:exported="true"
         android:theme="@style/Theme.DemoProject">
 
+
+    </activity>
+
+    <activity
+        android:name="com.example.demoproject.combinescreen.HostActivity"
+        android:exported="false"
+        android:theme="@style/Theme.DemoProject"
+        />
+
+    <activity
+        android:name="com.example.demoproject.combinescreen.CombineScreenActivity"
+        android:exported="true"
+        android:theme="@style/Theme.DemoProject">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+    </activity>
+
+    <activity
+        android:name="com.example.demoproject.webview.ActivityWebView"
+        android:exported="true"
+        android:theme="@style/Theme.DemoProject">
+
     </activity>
 </application>
 
 </manifest>
+
+
 

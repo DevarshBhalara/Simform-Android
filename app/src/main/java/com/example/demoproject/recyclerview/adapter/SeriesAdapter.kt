@@ -10,7 +10,7 @@ import com.example.demoproject.databinding.ItemExpanableRecyclerviewBinding
 import com.example.demoproject.recyclerview.model.Series
 
 class SeriesAdapter : RecyclerView.Adapter<SeriesAdapter.ViewHolder>() {
-    private val series: MutableList<Series> = mutableListOf()
+    val series: MutableList<Series> = mutableListOf()
 
     inner class ViewHolder(private val binding: ItemExpanableRecyclerviewBinding) :
         RecyclerView.ViewHolder(binding.root) {
