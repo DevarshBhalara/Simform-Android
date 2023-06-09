@@ -288,4 +288,20 @@
     <string name="data_from_previous">Data from previous</string>
     <string name="name_">Name</string>
     <string name="enter_password">Enter password</string>
+    <string name="movie_series">Movie Series</string>
+    <string name="songs">Songs</string>
+    <string name="lofar">Lofar</string>
+    <string name="casuals">Casuals</string>
+    <string name="sport">Sport</string>
+    <string name="trending">Trending</string>
+    <string name="converse">Converse</string>
+    <string name="chuck_taylor">Chuck Taylor</string>
+    <string name="chuck_taylor_this_is_really_a_great_shoes_also_can_be_used_in_sport">Chuck Taylor this is really a great shoes, also can be used in sport</string>
+    <string name="converse_">Converse</string>
+    <string name="what_kind_of_shoes_you_want">What kind of Shoes You want?</string>
+    <string name="best_of_this_year">Best of This year</string>
+    <string name="show_more">Show More</string>
+    <string name="shoes">Shoes</string>
+    <string name="chuck_taylor_">Chuck Taylor</string>
+    <string name="delete">delete</string>
 </resources>

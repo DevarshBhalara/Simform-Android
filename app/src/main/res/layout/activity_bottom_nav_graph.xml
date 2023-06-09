@@ -10,12 +10,11 @@
         android:id="@+id/appBar"
         android:layout_width="match_parent"
         app:navigationIcon="@drawable/back"
-        app:titleTextColor="@color/white"
-        android:background="@color/wintergreen"
+        app:titleTextColor="@color/black"
+        android:background="#ededfd"
         android:layout_height="wrap_content"
         app:navigationIconTint="@color/black"
         app:layout_constraintTop_toTopOf="parent"
-
         />
 
     <androidx.fragment.app.FragmentContainerView
@@ -32,7 +31,7 @@
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/wintergreen"
+        android:background="#ededfd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/navgraph_bottom_nav"
         />

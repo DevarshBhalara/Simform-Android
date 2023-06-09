@@ -23,7 +23,7 @@ class ActivityNavAppDrawer : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         appBarConfiguration = AppBarConfiguration.Builder(
-            R.id.fragment1, R.id.fragment2, R.id.fragment3, R.id.fragment4
+            R.id.fragment1, R.id.fragment2, R.id.fragment3,
         ).setOpenableLayout(binding.drawerLayout).build()
 
         navController = (supportFragmentManager.fragments[0] as NavHostFragment).navController

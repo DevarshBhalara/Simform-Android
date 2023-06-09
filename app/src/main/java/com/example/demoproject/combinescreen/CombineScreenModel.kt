@@ -43,15 +43,14 @@ data class CombineScreenModel(
                 CombineScreenModel("TextFiled", fragment = TextInputLayoutDemo(), type = ComponentType.BODY),
                 CombineScreenModel("Toast", fragment = ToastDemo(), type = ComponentType.BODY),
                 CombineScreenModel("ToggleButton", fragment = ToggleButtonDemo(), type = ComponentType.BODY),
-                CombineScreenModel("CheckBok", fragment = CheckBoxDemo(), type = ComponentType.BODY),
+                CombineScreenModel("CheckBox", fragment = CheckBoxDemo(), type = ComponentType.BODY),
                 CombineScreenModel("RadioButton", fragment = RadioGroupDemo(), type = ComponentType.BODY),
-                CombineScreenModel("Appbar", fragment = AppBarDemo(), type = ComponentType.BODY),
                 CombineScreenModel("SnackBar", fragment = SnackBarDemo(), type = ComponentType.BODY),
                 CombineScreenModel("Spinner", fragment = SpinnerDemo(), type = ComponentType.BODY),
                 CombineScreenModel("Chips", fragment = ChipsDemo(), type = ComponentType.BODY),
                 CombineScreenModel("TabLayout", fragment = TabLayoutDemo(), type = ComponentType.BODY),
                 CombineScreenModel("CustomView", fragment = CustomViewDemo(), type = ComponentType.BODY),
-                CombineScreenModel("Screens", fragment = ButtonDemo(), type = ComponentType.BODY),
+                CombineScreenModel("Screens", type = ComponentType.HEADER),
                 CombineScreenModel("Cart Screen", fragment = CartFragment(), type = ComponentType.BODY),
                 CombineScreenModel("Details Shoes Screen", fragment = DetailShoes(), type = ComponentType.BODY),
                 CombineScreenModel("HomePage Screen", fragment = HomePageFragment(), type = ComponentType.BODY),
@@ -67,7 +66,6 @@ data class CombineScreenModel(
                 CombineScreenModel("Coordinator Layout Fab button Demo", fragment = CoordinatorDemoFabButton(), type = ComponentType.BODY),
                 CombineScreenModel("Coordinator Layout Toolbar Demo", fragment = CorrdinatorLayoutFragment(), type = ComponentType.BODY),
 
-
                 CombineScreenModel("RecyclerView", fragment = ButtonDemo(), type = ComponentType.HEADER),
                 CombineScreenModel("Songs with Pagination", fragment = SongFragment(), type = ComponentType.BODY),
                 CombineScreenModel("Expandable", fragment = ExpandableRecyclerView(), type = ComponentType.BODY),
@@ -77,13 +75,11 @@ data class CombineScreenModel(
                 CombineScreenModel("BottomNavigation ViewPager", fragment = BottomNavigationViewPager(), type = ComponentType.BODY),
                 CombineScreenModel("Chat Screen", fragment = ChatFragment(), type = ComponentType.BODY),
 
-
                 CombineScreenModel("Activity, Fragment, Intent", fragment = ButtonDemo(), type = ComponentType.HEADER),
                 CombineScreenModel("Data Pass Between Activities", clazz = ActivityOne::class.java, type = ComponentType.BODY),
                 CombineScreenModel("Implicit Intent", clazz = ActivityImplicitIntent::class.java, type = ComponentType.BODY),
                 CombineScreenModel("Camera Practical", clazz = ActivityCamera::class.java, type = ComponentType.BODY),
                 CombineScreenModel("Fragments", clazz = ActivityFragments::class.java, type = ComponentType.BODY),
-
 
                 CombineScreenModel("Navigation", type = ComponentType.HEADER),
                 CombineScreenModel("Navigation Graph", clazz = ActivityNavGraph::class.java, type = ComponentType.BODY),
@@ -93,8 +89,6 @@ data class CombineScreenModel(
                 CombineScreenModel("OtherViews", type = ComponentType.HEADER),
                 CombineScreenModel("WebView", clazz = ActivityWebView::class.java, type = ComponentType.BODY),
                 CombineScreenModel("SearchView", clazz = ActivitySearchView::class.java, type = ComponentType.BODY),
-
-
             )
         }
     }

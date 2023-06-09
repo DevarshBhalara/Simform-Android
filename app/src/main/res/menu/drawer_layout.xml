@@ -6,19 +6,16 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/fragment1"
-            android:title="@string/fragment_1" />
+            android:title="@string/movie_series" />
 
         <item
             android:id="@+id/fragment2"
-            android:title="@string/fragment_2" />
+            android:title="@string/songs" />
 
         <item
             android:id="@+id/fragment3"
-            android:title="@string/fragment_3" />
+            android:title="@string/series" />
 
-        <item
-            android:id="@+id/fragment4"
-            android:title="@string/fragment_4" />
     </group>
 
 </menu>

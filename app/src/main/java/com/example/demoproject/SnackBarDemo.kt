@@ -55,7 +55,7 @@ class SnackBarDemo : Fragment() {
         btnSnackBarDemoAction.setOnClickListener {
             Snackbar.make(view, "Want Help?", Snackbar.LENGTH_SHORT).setAction("Yes") {
                 Toast.makeText(context, "Okay", Toast.LENGTH_SHORT).show()
-            }.setActionTextColor(Color.GRAY).setTextColor(Color.GREEN).setAnchorView(btnSnackBarDemoAction).show()
+            }.setTextColor(Color.GREEN).show()
         }
 
         btnSnackbarAnchorView.setOnClickListener {

@@ -7,26 +7,20 @@
 
     <fragment
         android:id="@+id/fragment1"
-        android:name="com.example.demoproject.activityintent.appdrawer.FragmentOneNavigation"
-        android:label="Fragment 1"
-        tools:layout="@layout/fragment_one_navigation"/>
+        android:name="com.example.demoproject.recyclerview.MovieSeriesFragment"
+        android:label="Movie Series"
+        tools:layout="@layout/fragment_movie_series"/>
 
     <fragment
         android:id="@+id/fragment2"
-        android:name="com.example.demoproject.activityintent.appdrawer.FragmentTwoNavigation"
-        android:label="Fragment 2"
-        tools:layout="@layout/fragment_two_navigation"/>
+        android:name="com.example.demoproject.recyclerview.SongFragment"
+        android:label="Songs"
+        tools:layout="@layout/fragment_song"/>
 
     <fragment
         android:id="@+id/fragment3"
-        android:name="com.example.demoproject.activityintent.appdrawer.FragmentThreeNavigation"
-        android:label="Fragment 3"
-        tools:layout="@layout/fragment_three_navigation"/>
-
-    <fragment
-        android:id="@+id/fragment4"
-        android:name="com.example.demoproject.activityintent.navgraph.BottomItemTwoFragment"
-        android:label="Fragment 4"
-        tools:layout="@layout/fragment_bottom_item_two"/>
+        android:name="com.example.demoproject.recyclerview.ExpandableRecyclerView"
+        android:label="Series"
+        tools:layout="@layout/fragment_expandable_recycler_view"/>
 
 </navigation>

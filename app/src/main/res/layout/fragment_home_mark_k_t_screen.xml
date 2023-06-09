@@ -419,6 +419,8 @@
                 android:background="@drawable/button_dashed_outline"
                 android:text="@string/add_new_device"
                 android:textAllCaps="false"
+                android:layout_marginBottom="@dimen/dp_20"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/guideVerticalEnd"
                 app:layout_constraintStart_toStartOf="@id/guideVerticalStart"
                 app:layout_constraintTop_toBottomOf="@id/cardTv" />
