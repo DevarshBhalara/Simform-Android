@@ -13,7 +13,24 @@
         />
 
     <ImageView
-        android:layout_height="300dp"
+        android:layout_height="200dp"
+        android:layout_width="220dp"
+        android:src="@drawable/farzi"
+        />
+
+
+    <ImageView
+        android:layout_height="200dp"
+        android:layout_width="220dp"
+        android:src="@drawable/farzi"
+        />
+    <ImageView
+        android:layout_height="200dp"
+        android:layout_width="220dp"
+        android:src="@drawable/farzi"
+        />
+    <ImageView
+        android:layout_height="200dp"
         android:layout_width="220dp"
         android:src="@drawable/farzi"
         />
@@ -22,8 +39,8 @@
         android:layout_height="200dp"
         android:layout_width="220dp"
         android:src="@drawable/farzi"
-
         />
+
 
 
 

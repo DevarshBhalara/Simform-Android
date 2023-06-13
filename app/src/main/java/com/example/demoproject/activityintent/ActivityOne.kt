@@ -33,7 +33,7 @@ class ActivityOne : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
+        binding = ActivityOne2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         Log.e("life", "Create")
         setUp()

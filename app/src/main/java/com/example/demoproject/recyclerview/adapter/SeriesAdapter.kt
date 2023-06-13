@@ -10,7 +10,7 @@ import com.example.demoproject.databinding.ItemExpanableRecyclerviewBinding
 import com.example.demoproject.recyclerview.model.Series
 
 class SeriesAdapter : RecyclerView.Adapter<SeriesAdapter.ViewHolder>() {
-    private val series: MutableList<Series> = mutableListOf()
+    val series: MutableList<Series> = mutableListOf()
 
     inner class ViewHolder(private val binding: ItemExpanableRecyclerviewBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -62,5 +62,12 @@ class SeriesAdapter : RecyclerView.Adapter<SeriesAdapter.ViewHolder>() {
     fun addItem(list: Series) {
         series.add(list)
         notifyItemChanged(series.count())
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun filterList(filteredList: MutableList<Series>) {
+        series.clear()
+        series.addAll(filteredList)
+        notifyDataSetChanged()
     }
 }
