@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -20,6 +24,166 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".activityintent.ActivityPendingIntent"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject">
+
+        </activity>
+
+        <activity
+            android:name=".activityintent.appdrawer.ActivityNavAppDrawer"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject">
+
+
+        </activity>
+
+        <receiver android:name=".activityintent.MyReceiver"></receiver>
+
+        <activity
+            android:name=".activityintent.navgraph.ActivityBottomNavGraph"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject">
+
+        </activity>
+        <activity
+            android:name=".activityintent.navgraph.ActivityNavGraph"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject">
+            <nav-graph android:value="@navigation/nav_graph" />
+
+
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:mimeType="text/plain" />
+                <data
+                    android:host="www.devarsh.com"
+                    android:scheme="https" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".searchview.ActivitySearchView"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject">
+
+
+        </activity>
+
+        <activity
+            android:name=".activityintent.ActivityCamera"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject"></activity>
+        <activity
+            android:name=".activityintent.bottomnavigation.ActivityBottomNavFragment"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject"></activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".activityintent.ActivityIntentFilter"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject">
+
+            <!-- Send filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <!-- View intent filter -->
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activityintent.fragments.ActivityFragments"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject"></activity>
+        <activity
+            android:name=".activityintent.ActivityImplicitIntent"
+            android:theme="@style/Theme.DemoProject" />
+        <activity
+            android:name=".activityintent.ActivityTwo"
+            android:exported="false"
+            android:theme="@style/Theme.DemoProject" />
+        <activity
+            android:name=".activityintent.ActivityOne"
+            android:exported="true"
+            android:label="@string/title_activity_one"
+            android:theme="@style/Theme.DemoProject">
+
+        </activity>
+<!--        <activity-->
+<!--            android:name=".BottomNavigationActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".ActivitySplashScreen"-->
+<!--            android:exported="true"-->
+<!--            android:theme="@style/Theme.DemoProject" />-->
+<!--        <activity-->
+<!--            android:name=".ActivityKTScreen"-->
+<!--            android:exported="true"-->
+<!--            android:theme="@style/Theme.AppCompat" />-->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject">
+
+
+        </activity>
+
+        <activity
+            android:name="com.example.demoproject.combinescreen.HostActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DemoProject" />
+
+        <activity
+            android:name="com.example.demoproject.combinescreen.CombineScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.example.demoproject.webview.ActivityWebView"
+            android:exported="true"
+            android:theme="@style/Theme.DemoProject">
+
+        </activity>
     </application>
 
 </manifest>
+
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/myFirstFragment"
+    >
+
+    <fragment
+        android:id="@+id/myFirstFragment"
+        android:name="com.example.demoproject.activityintent.navgraph.MyFirstFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_my_first"
+        >
+
+        <action
+            android:id="@+id/home_to_second"
+            app:destination="@id/mySecondFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mySecondFragment"
+        android:name="com.example.demoproject.activityintent.navgraph.MySecondFragment"
+        android:label="Second"
+        tools:layout="@layout/fragment_my_second"
+        >
+
+        <action
+            android:id="@+id/second_to_third"
+            app:destination="@id/myThirdFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/myThirdFragment"
+        android:name="com.example.demoproject.activityintent.navgraph.MyThirdFragment"
+        android:label="Third"
+        tools:layout="@layout/fragment_my_third"
+        >
+
+        <action
+            android:id="@+id/third_to_home"
+            app:destination="@id/myFirstFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            />
+
+        <action
+            android:id="@+id/third_to_second"
+            app:destination="@id/mySecondFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"/>
+
+    </fragment>
+
+</navigation>

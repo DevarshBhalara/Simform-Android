@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/home"
+        android:icon="@drawable/baseline_home_max_24"
+        app:showAsAction="ifRoom"
+        android:id="@+id/itemOne"
+        android:iconTint="@color/white"
+        />
+
+    <item
+        android:title="@string/living_room"
+        android:icon="@drawable/baseline_device_thermostat_24"
+        app:showAsAction="ifRoom"
+        android:id="@+id/itemTwo"
+        android:iconTint="@color/white"
+        />
+</menu>
