@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="android:windowSplashScreenBackground" tools:ignore="NewApi"> #202020 </item>
+        <item name="postSplashScreenTheme"> @style/Theme.DemoProject </item>
+        <item name="windowSplashScreenAnimatedIcon"> @drawable/baseline_play_circle_24 </item>
+        <item name="android:windowSplashScreenIconBackgroundColor" tools:ignore="NewApi"> #2D6A80 </item>
+    </style>
+</resources>

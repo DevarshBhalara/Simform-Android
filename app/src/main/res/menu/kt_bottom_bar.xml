@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/livingRoom"
+        android:icon="@drawable/baseline_home_max_24"
+        android:title="@string/living_room"/>
+
+    <item
+        android:id="@+id/homeMart"
+        android:icon="@drawable/signal"
+        android:title="@string/home_mart"/>
+
+    <item
+        android:id="@+id/custom"
+        android:title="" />
+
+    <item
+        android:id="@+id/tempScreen"
+        android:icon="@drawable/desklamp"
+        android:title="@string/temp_screen"/>
+</menu>

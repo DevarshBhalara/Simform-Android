@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_14_06_23,_1_00_PM_[Changes]" date="1686727847852" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_06_23,_1_00_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 14/06/23, 1:00 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/java/com/example/demoproject/java_practice/Animal.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_06_23,_1_00_PM_[Changes]/Animal.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/java/com/example/demoproject/java_practice/JavaBasics.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_06_23,_1_00_PM_[Changes]/JavaBasics.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/java/com/example/demoproject/java_practice/Dog.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_06_23,_1_00_PM_[Changes]/Dog.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/java/com/example/demoproject/java_practice/Cat.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_06_23,_1_00_PM_[Changes]/Cat.class" />
+  </binary>
+</changelist>
