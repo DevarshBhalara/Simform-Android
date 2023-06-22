@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragment1"
+    android:id="@+id/nav_graph_drawer">
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.example.demoproject.recyclerview.MovieSeriesFragment"
+        android:label="Movie Series"
+        tools:layout="@layout/fragment_movie_series"/>
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.example.demoproject.recyclerview.SongFragment"
+        android:label="Songs"
+        tools:layout="@layout/fragment_song"/>
+
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="com.example.demoproject.recyclerview.ExpandableRecyclerView"
+        android:label="Series"
+        tools:layout="@layout/fragment_expandable_recycler_view"/>
+
+</navigation>

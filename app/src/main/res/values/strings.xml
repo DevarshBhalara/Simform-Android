@@ -1,3 +1,309 @@
 <resources>
+
     <string name="app_name">SimformAndroidTraining</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_demo">Button Demo</string>
+    <string name="click_me">Click me</string>
+    <string name="outlines">Outlines</string>
+    <string name="button_color_demo">Button Color Demo</string>
+    <string name="demo">Demo</string>
+    <string name="button_with_icon_and_elevation">Button with Icon and elevation</string>
+    <string name="ripple_color">Ripple Color</string>
+    <string name="click_to_view_toast">Click to View toast</string>
+    <string name="toast_with_margin">Toast with Margin</string>
+    <string name="custom_toast">Custom Toast</string>
+    <string name="custom_toast_text">Custom toast</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="which_one_you_have_watched">Which one you have Watched?</string>
+    <string name="elite">Elite</string>
+    <string name="lucifer">Lucifer</string>
+    <string name="what_happened_to_monday">What Happened to Monday</string>
+    <string name="click_to_see">Click to See</string>
+    <string name="select_you_gender">Select you gender?</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="select_any_one">Select any One?</string>
+    <string name="windows">Windows</string>
+    <string name="macos">MacOS</string>
+    <string name="linux">Linux</string>
+    <string name="show_text">Show Text</string>
+    <string name="this_is_simple_textview">This is simple textview</string>
+    <string name="test_button">Test Button</string>
+    <string name="email">Email</string>
+    <string name="user_name">User name</string>
+    <string name="click_here">Click here</string>
+    <string name="simple_snackbar">Simple SnackBar</string>
+    <string name="snackbar_with_action">SnackBar with action</string>
+    <string name="anchor_view_snackbar">Anchor view SnackBar</string>
+    <string name="home">Home</string>
+    <string name="add">Add</string>
+    <string name="search">Search</string>
+    <string name="more">More</string>
+    <string name="thumbnail_image">Thumbnail Image</string>
+    <string name="name">Name :</string>
+    <string name="farzi">Farzi</string>
+    <string name="rating">Rating :</string>
+    <string name="_8_2">8.2</string>
+    <string name="cast">Cast :</string>
+    <string name="shahid_kapoor_sunny_vijay_sethupathi_michael_vednayagam_raashii_khanna_megha_vyas_kay_kay_menon_mansoor_dalal">Shahid Kapoor ... Sunny · Vijay Sethupathi ... Michael Vednayagam · Raashii Khanna ... Megha Vyas · Kay Kay Menon ... Mansoor Dalal ·</string>
+    <string name="editor">Editor :</string>
+    <string name="sumeet_kotian">Sumeet Kotian</string>
+    <string name="description">Description :</string>
+    <string name="an_artist_who_gets_pulled_into_the_murky_high_stakes_of_a_con_job_and_a_fiery_task_force_officer_on_the_mission_to_rid_the_country_of_his_menaces_in_a_fast_paced_edgy_one_of_a_kind_thriller">An artist who gets pulled into the murky high stakes of a con job and a fiery task force officer on the mission to rid the country of his menaces in a fast-paced, edgy one-of-a-kind thriller.</string>
+    <string name="button_2">Button 2</string>
+    <string name="button_1">Button 1</string>
+    <string name="watch">Watch</string>
+    <string name="laptop">Laptop</string>
+    <string name="_4_24">4:24</string>
+
+    <string name="empty_text"> "" </string>
+    <string name="type">Type</string>
+    <string name="take_my_breath">Take My Breath</string>
+    <string name="change_song">Change Song</string>
+    <string name="size">Size</string>
+    <string name="colors">Colors</string>
+    <string name="read_more">Read More</string>
+    <string name="specification">Specification</string>
+    <string name="checkout_now">Checkout Now</string>
+    <string name="price_item">Price item :</string>
+    <string name="shipping">Shipping :</string>
+    <string name="tax">Tax</string>
+    <string name="subtotal">Subtotal :</string>
+    <string name="todo">TODO</string>
+    <string-array name="language">
+        <item> English </item>
+        <item> Hindi </item>
+        <item> Gujarati </item>
+    </string-array>
+
+    <string-array name="songLessThenZero">
+        <item> Less Then Zero </item>
+        <item> 3:32 </item>
+        <item> "Remember I was your hero, yeah\n" +
+                        "I'd wear your heart like a symbol\n" +
+                        "I couldn't save you from my darkest truth of all\n" +
+                        "I know\n" +
+                        "I'll always be less than zero\n" +
+                        "Oh yeah\n" +
+                        "You tried your best with me, I know\n" +
+                        "I couldn't face you with my darkest truth of all\n" +
+                        "Oh\n" +
+                        "'Cause I can't get it out of my head\n" +
+                        "And no, I can't shake this feeling that crawls in my bed\n" +
+                        "I try to hide it, but I know you know me\n" +
+                        "I try to fight it, but I'd rather be free\n" +
+                        "Oh, oh\n" +
+                        "Oh yeah\n" +
+                        "Can we meet in the middle?\n" +
+                        "Oh yeah\n" +
+                        "'Cause you were just like me before\n" +
+                        "Now you'd rather leave me\n" +
+                        "Than to watch me die in your arms\n" +
+                        "Oh, whoa\n" +
+                        "But I can't get it out of my head\n" +
+                        "No, I can't shake this feeling that crawls in my bed\n" +
+                        "I try to hide it, but I know you know me\n" +
+                        "I try to fight it, but I'd rather be free\n" +
+                        "Oh, whoa (hey)\n" +
+                        "ooh\n" +
+                        "(I try to) ooh\n" +
+                        "(I try to)\n" +
+                        "I can't get it out of my head\n" +
+                        "No, I can't shake this feeling that crawls in my bed\n" +
+                        "I try to hide it, but I know you know me (know me)\n" +
+                        "I try to fight it, but I'd rather be free (be free)\n" +
+                        "Yeah\n" +
+                        "I'll always be less than zero\n" +
+                        "You tried your best with me, I know" </item>
+
+
+    </string-array>
+    <string-array name="songTakeMyBreath">
+        <item> Take My Breath </item>
+        <item> 5:32 </item>
+        <item> "I saw the fire in your eyes\n" +
+                        "I saw the fire when I look into your eyes\n" +
+                        "You tell me things you wanna try, uh\n" +
+                        "I know temptation is the devil in disguise\n" +
+                        "You risk it all to feel alive, oh yeah\n" +
+                        "You're offering yourself to me like sacrifice\n" +
+                        "You said you do this all the time\n" +
+                        "Tell me you love me if I bring you to the light\n" +
+                        "It's like a dream what she feels with me\n" +
+                        "She loves to be on the edge\n" +
+                        "Her fantasy is okay with me\n" +
+                        "Then suddenly, baby says\n" +
+                        "Take my breath away\n" +
+                        "And make it last forever, babe\n" +
+                        "Do it now or never, babe, uh\n" +
+                        "Take my breath away\n" +
+                        "Nobody does it better, babe\n" +
+                        "Bring me close to\n" +
+                        "Want me to hold onto you tight\n" +
+                        "You pull me closer, I feel the heat between your thighs (uh, say)\n" +
+                        "You're way too young to end your life (huh)\n" +
+                        "Girl, I don't wanna be the one who pays the price\n" +
+                        "Ooh, it's like a dream what she feels with me\n" +
+                        "She loves to be on the edge\n" +
+                        "Her fantasy is okay with me\n" +
+                        "Then suddenly, baby says\n" +
+                        "Take my breath away\n" +
+                        "And make it last forever, babe\n" +
+                        "Do it now or never, babe, uh\n" +
+                        "Take my breath away\n" +
+                        "Nobody does it better, babe\n" +
+                        "Bring me close to heaven, babe, uh\n" +
+                        "Take my breath\n" +
+                        "Oh, oh-ooh\n" +
+                        "And they'll see me (yeah)\n" +
+                        "Oh-ooh, ooh (yeah)\n" +
+                        "Oh-oh, oh-oh\n" +
+                        "Oh-oh, oh-oh\n" +
+                        "Oh-oh, oh-oh\n" +
+                        "Oh-oh\n" +
+                        "Take my breath away (take my breath, my breath away)\n" +
+                        "And make it last forever, babe\n" +
+                        "Do it now or never, babe, uh\n" +
+                        "Take my breath away (take my breath, my breath away)\n" +
+                        "Nobody does it better, babe\n" +
+                        "Bring me close to heaven, babe (oh)\n" +
+                        "Take my breath (take my breath, my breath away)\n" +
+                        "(Nobody)\n" +
+                        "Take my breath (take my breath, my breath away)\n" +
+                        "Nobody does it better, babe (better)\n" +
+                        "Bring me close to heaven, babe, uh\n" +
+                        "Take my breath"
+        </item>
+
+    </string-array>
+
+    <string name="large_text">
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n"
+    </string>
+    <string name="celcius">Celcius°</string>
+    <string name="_75">75%</string>
+    <string name="_11km_h">11km/h</string>
+    <string name="your_interior">Your Interior</string>
+    <string name="weatherman">Weatherman</string>
+    <string name="_24">24°</string>
+    <string name="sat_04_february">Sat 04 February</string>
+    <string name="bandung_indonesia">Bandung, Indonesia</string>
+    <string name="_4_device_connected">4 Device Connected</string>
+    <string name="na">NA</string>
+    <string name="_0_5h">0.5h</string>
+    <string name="active_device">Active Device</string>
+    <string name="_24t">24</string>
+    <string name="view_more">View More</string>
+    <string name="add_new_device">Add New Device</string>
+    <string name="airconditionar">AirConditionar</string>
+    <string name="_32_c">32°C</string>
+    <string name="_40_c">-40°C</string>
+    <string name="_32kwh">32kwH</string>
+    <string name="plus">Plus</string>
+    <string name="minus">Minus</string>
+    <string name="bottom_sheet">Bottom Sheet</string>
+    <string name="celciusStr">Celcius</string>
+    <string name="moreicon">MoreIcon</string>
+    <string name="notification_icon">Notification Icon</string>
+    <string name="divider">Divider</string>
+    <string name="weatherimage">WeatherImage</string>
+    <string name="water_drop_icon">Water drop icon</string>
+    <string name="windicon">windIcon</string>
+    <string name="bottom_sheet_str">Bottom Sheet</string>
+    <string name="icon">Icon</string>
+    <string name="album_name_song_albumname">`Album Name` + @{song.albumName}</string>
+    <string name="e">E</string>
+    <string name="_24_watt">24 watt</string>
+    <string name="living_room">Living Room</string>
+    <string name="home_mart">Home Mart</string>
+    <string name="temp_screen">Temp Screen</string>
+    <string name="actions">Actions</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="song">Song</string>
+    <string name="movieseries">MovieSeries</string>
+    <string name="series">Series</string>
+    <string name="user_s_review">User\'s Review</string>
+    <string name="message">Message</string>
+    <string name="user_name_">User name</string>
+    <string name="last_seen">last seen</string>
+    <string name="user_name__">User Name</string>
+    <string name="call">Call</string>
+    <string name="video">video</string>
+    <string name="setting">setting</string>
+    <string name="buddy">Buddy!</string>
+    <string name="back">back</string>
+    <string name="send">send</string>
+    <string name="attach">attach</string>
+    <string name="title_activity_one">ActivityOne</string>
+    <string name="fragment1">Fragment1</string>
+    <string name="fragment2">Fragment2</string>
+    <string name="fragment_one">Fragment One</string>
+    <string name="fragment_two">Fragment Two</string>
+    <string name="view_browser">View Browser</string>
+    <string name="send_email">Send Email</string>
+    <string name="today">Today</string>
+    <string name="message_from_another_application">Message from another application</string>
+    <string name="second_fragment">Second Fragment</string>
+    <string name="hello">Hello</string>
+    <string name="home_fragment">Home Fragment</string>
+    <string name="search_fragment">Search Fragment</string>
+    <string name="add_fragment">Add Fragment</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="go_to_second">Go to second</string>
+    <string name="this_is_first_fragment">This is First fragment</string>
+    <string name="this_is_secondfragment">This is SecondFragment</string>
+    <string name="go_to_third">Go to Third</string>
+    <string name="this_is_third_fragment">This is Third Fragment</string>
+    <string name="go_to_first">Go to First</string>
+    <string name="item_one">Item One</string>
+    <string name="add_fragment_">Add Fragment</string>
+    <string name="search_fragment_">Search Fragment</string>
+    <string name="fragment_1">Fragment 1</string>
+    <string name="fragment_2">Fragment 2</string>
+    <string name="fragment_3">Fragment 3</string>
+    <string name="fragment_4">Fragment 4</string>
+    <string name="enter_text">Enter text</string>
+    <string name="data_from_previous">Data from previous</string>
+    <string name="name_">Name</string>
+    <string name="enter_password">Enter password</string>
+    <string name="movie_series">Movie Series</string>
+    <string name="songs">Songs</string>
+    <string name="lofar">Lofar</string>
+    <string name="casuals">Casuals</string>
+    <string name="sport">Sport</string>
+    <string name="trending">Trending</string>
+    <string name="converse">Converse</string>
+    <string name="chuck_taylor">Chuck Taylor</string>
+    <string name="chuck_taylor_this_is_really_a_great_shoes_also_can_be_used_in_sport">Chuck Taylor this is really a great shoes, also can be used in sport</string>
+    <string name="converse_">Converse</string>
+    <string name="what_kind_of_shoes_you_want">What kind of Shoes You want?</string>
+    <string name="best_of_this_year">Best of This year</string>
+    <string name="show_more">Show More</string>
+    <string name="shoes">Shoes</string>
+    <string name="chuck_taylor_">Chuck Taylor</string>
+    <string name="delete">delete</string>
+
 </resources>

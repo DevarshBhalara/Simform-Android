@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/itemOne"
+    android:id="@+id/nav_bottom_nav">
+
+    <fragment
+        android:name="com.example.demoproject.ktscreen.HomeMarkKTScreenFragment"
+        android:id="@+id/itemOne"
+        tools:layout="@layout/fragment_home_mark_k_t_screen"
+        android:label="Home"
+        >
+
+    </fragment>
+
+    <fragment
+        android:name="com.example.demoproject.ktscreen.LivingRoomScreenFragment"
+        android:id="@+id/itemTwo"
+        tools:layout="@layout/fragment_living_room_temp_screen"
+        android:label="Temperature"
+        />
+
+</navigation>
