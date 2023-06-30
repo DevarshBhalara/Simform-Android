@@ -46,7 +46,7 @@ class TabLayoutDemo : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val tabLayout = view.findViewById<TabLayout>(R.id.tabLayout)
         val viewPager = view.findViewById<ViewPager2>(R.id.viewPager)
-        val tabTitle = listOf("Button", "SnackBar", "TextInputLayout")
+        val tabTitle = listOf("Button", "SnackBar", "TextInputLayout",)
 
         tabLayout.addTab(tabLayout.newTab())
         tabLayout.addTab(tabLayout.newTab())

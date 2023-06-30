@@ -304,4 +304,18 @@
     <string name="shoes">Shoes</string>
     <string name="chuck_taylor_">Chuck Taylor</string>
     <string name="delete">delete</string>
+    <string name="profile">Profile</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_job">Enter Job</string>
+    <string name="login">Login</string>
+    <string name="login_example_post_request">Login Example (Post Request)</string>
+    <string name="registration_example_post_request">Registration Example (Post Request)</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="state">State</string>
+    <string name="add_user">Add user</string>
+    <string name="id">Id</string>
+    <string name="update_user">Update User</string>
+    <string name="uplaod">Uplaod</string>
+    <string name="select">Select</string>
+    <string name="image">Image</string>
 </resources>

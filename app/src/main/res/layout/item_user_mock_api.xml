@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.demoproject.webservices.data.UserMockApi" />
+
+        <variable
+            name="todo"
+            type="com.example.demoproject.webservices.data.UserTodo" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        app:cardCornerRadius="@dimen/dp_16"
+        app:cardBackgroundColor="@color/lightgray"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:contentDescription="@string/profile"
+                android:src="@drawable/farzi"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/firstName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{user.name}"
+                tools:text="Name"
+                app:layout_constraintBottom_toTopOf="@id/tvEmail"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                android:padding="@dimen/dp_15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/imgAvatar"
+                app:layout_constraintTop_toTopOf="@id/imgAvatar"
+                />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/firstName"
+                tools:text="Email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                android:text="@{user.email}"
+                android:textSize="@dimen/sp_16"
+                android:padding="@dimen/dp_15"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@id/tvMobileNumber"
+                app:layout_constraintStart_toStartOf="@id/firstName"
+             />
+
+            <TextView
+                android:id="@+id/tvMobileNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tvEmail"
+                tools:text="Mobilenumber"
+                android:padding="@dimen/dp_15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                android:text="@{user.mobilenumber}"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toTopOf="@id/tvState"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/firstName"
+                />
+
+            <TextView
+                android:id="@+id/tvState"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tvMobileNumber"
+                tools:text="State"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                android:text="@{user.state}"
+                android:textSize="@dimen/sp_16"
+                android:padding="@dimen/dp_15"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/imgAvatar"
+                app:layout_constraintStart_toStartOf="@id/firstName"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

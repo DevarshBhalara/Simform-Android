@@ -26,6 +26,9 @@ import com.example.demoproject.screens.CartFragment
 import com.example.demoproject.screens.DetailShoes
 import com.example.demoproject.screens.HomePageFragment
 import com.example.demoproject.searchview.ActivitySearchView
+import com.example.demoproject.webservices.ActivityDisplayUser
+import com.example.demoproject.webservices.newsapp.ui.ActivityNews
+import com.example.demoproject.webservices.ui.*
 import com.example.demoproject.webview.ActivityWebView
 
 data class CombineScreenModel(
@@ -89,6 +92,16 @@ data class CombineScreenModel(
                 CombineScreenModel("OtherViews", type = ComponentType.HEADER),
                 CombineScreenModel("WebView", clazz = ActivityWebView::class.java, type = ComponentType.BODY),
                 CombineScreenModel("SearchView", clazz = ActivitySearchView::class.java, type = ComponentType.BODY),
+
+                CombineScreenModel("Retrofit", type = ComponentType.HEADER),
+                CombineScreenModel("Retro fit Get Request", clazz = ActivityDisplayUser::class.java, type = ComponentType.BODY),
+                CombineScreenModel("Login Post request", clazz = ActivityLogin::class.java, type = ComponentType.BODY),
+                CombineScreenModel("Retrofit All Request Demo", clazz = ActivityDisplayMockApiUsers::class.java, type = ComponentType.BODY),
+                CombineScreenModel("OkHttp getuser", clazz = ActivityDisplayUserOkHttp::class.java, type = ComponentType.BODY),
+                CombineScreenModel("OkHttp Registration", clazz = AddUserOkHttp::class.java, type = ComponentType.BODY),
+                CombineScreenModel("Upload Image", clazz = ActivityUploadImage::class.java, type = ComponentType.BODY),
+                CombineScreenModel("Download Image", clazz = ActivityDownloadFile::class.java, type = ComponentType.BODY),
+                CombineScreenModel("Permission and News App", clazz = ActivityNews::class.java, type = ComponentType.BODY),
             )
         }
     }

@@ -36,12 +36,11 @@
         android:id="@+id/tfUsernameLayout" >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tfUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/user_name"
-            android:id="@+id/tfUserName"
-            android:maxLines="1"
-            />
+            android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

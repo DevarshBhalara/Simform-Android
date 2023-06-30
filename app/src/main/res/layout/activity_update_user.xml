@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.demoproject.webservices.data.UserMockApi" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp_20"
+        tools:context=".webservices.ui.ActivityAddUser">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfIdLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/red"
+            app:errorContentDescription="This field is imporatant"
+            app:errorIconDrawable="@drawable/baseline_help_outline_24"
+            app:hintTextColor="@color/red"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tfId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/id"
+                android:editable="false"
+                android:text="@{user.id}"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfUsernameLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:boxStrokeColor="@color/red"
+            app:errorContentDescription="This field is imporatant"
+            app:errorIconDrawable="@drawable/baseline_help_outline_24"
+            app:hintTextColor="@color/red"
+            app:layout_constraintTop_toBottomOf="@id/tfIdLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tfUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/user_name"
+                android:text="@{user.name}"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfUseremailLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:boxStrokeColor="@color/red"
+            app:errorContentDescription="This field is imporatant"
+            app:errorIconDrawable="@drawable/baseline_help_outline_24"
+            app:hintTextColor="@color/red"
+            app:layout_constraintTop_toBottomOf="@id/tfUsernameLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tfEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.email}"
+                android:hint="@string/email"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfMobileLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:boxStrokeColor="@color/red"
+            app:errorContentDescription="This field is imporatant"
+            app:errorIconDrawable="@drawable/baseline_help_outline_24"
+            app:hintTextColor="@color/red"
+            app:layout_constraintTop_toBottomOf="@id/tfUseremailLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tfMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.mobilenumber}"
+                android:hint="@string/mobile_number"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfStateLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:boxStrokeColor="@color/red"
+            app:errorContentDescription="This field is imporatant"
+            app:errorIconDrawable="@drawable/baseline_help_outline_24"
+            app:hintTextColor="@color/red"
+            app:layout_constraintTop_toBottomOf="@id/tfMobileLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tfState"
+                android:layout_width="match_parent"
+                android:text="@{user.state}"
+                android:layout_height="wrap_content"
+                android:hint="@string/state"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/updateUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/update_user"
+            app:layout_constraintEnd_toEndOf="@id/tfStateLayout"
+            app:layout_constraintStart_toStartOf="@id/tfStateLayout"
+            app:layout_constraintTop_toBottomOf="@id/tfStateLayout" />
+
+        <Button
+            android:id="@+id/deleteUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="Delete this user"
+            app:layout_constraintEnd_toEndOf="@id/tfStateLayout"
+            app:layout_constraintStart_toStartOf="@id/tfStateLayout"
+            app:layout_constraintTop_toBottomOf="@id/updateUser" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
