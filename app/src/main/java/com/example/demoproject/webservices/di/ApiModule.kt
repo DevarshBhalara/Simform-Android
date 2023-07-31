@@ -1,6 +1,12 @@
 package com.example.demoproject.webservices.di
 
+import android.content.Context
 import androidx.navigation.Navigator
+import androidx.room.Room
+import com.example.demoproject.roomdb.repository.UserRepository
+import com.example.demoproject.roomdb.room.UserDao
+import com.example.demoproject.roomdb.room.UserDatabase
+import com.example.demoproject.webservices.BseApplication
 import com.example.demoproject.webservices.data.UserMockApi
 import com.example.demoproject.webservices.interfaces.UserMockApiService
 import com.example.demoproject.webservices.newsapp.ui.repository.NewsRepository
@@ -29,6 +35,8 @@ object ApiModule {
     private const val USER_MOCK_API_URL = "https://648c3d218620b8bae7ec85b9.mockapi.io/"
     private const val USER_TODO = "https://dummyjson.com/"
     private const val NEWS = "https://newsapi.org/v2/"
+
+    private val database = Room.databaseBuilder(BseApplication.getAppContext()!!, UserDatabase::class.java, "user").build()
 
     @Provides
     @Singleton
@@ -132,5 +140,15 @@ object ApiModule {
     @Singleton
     fun provideNewRepository(@Named("NewsService") newsInterface: NewsInterface): NewsRepository =
         NewsRepository(newsInterface)
+
+    @Provides
+    @Singleton
+    fun provideUserRepository(userDao: UserDao): UserRepository =
+        UserRepository(userDao)
+
+    @Provides
+    @Singleton
+    fun provideUserDaoService(): UserDao =
+        database.userDao()
 
 }

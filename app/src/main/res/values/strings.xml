@@ -318,4 +318,6 @@
     <string name="uplaod">Uplaod</string>
     <string name="select">Select</string>
     <string name="image">Image</string>
+    <string name="enter_last_name">Enter last name</string>
+    <string name="insert">Insert</string>
 </resources>

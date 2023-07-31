@@ -251,8 +251,11 @@ xmlns:tools="http://schemas.android.com/tools">
         android:theme="@style/Theme.DemoProject"
 
         />
+
+    <activity
+        android:name="com.example.demoproject.roomdb.ui.InsertUserActivity"
+        android:exported="false"
+        android:theme="@style/Theme.DemoProject"
+        />
 </application>
 </manifest>
-
-
-

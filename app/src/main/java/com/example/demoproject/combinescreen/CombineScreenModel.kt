@@ -22,6 +22,7 @@ import com.example.demoproject.ktscreen.LivingRoomTempScreen
 import com.example.demoproject.layouts.*
 import com.example.demoproject.recyclerview.*
 import com.example.demoproject.recyclerview.kt.ChatFragment
+import com.example.demoproject.roomdb.ui.InsertUserActivity
 import com.example.demoproject.screens.CartFragment
 import com.example.demoproject.screens.DetailShoes
 import com.example.demoproject.screens.HomePageFragment
@@ -102,6 +103,8 @@ data class CombineScreenModel(
                 CombineScreenModel("Upload Image", clazz = ActivityUploadImage::class.java, type = ComponentType.BODY),
                 CombineScreenModel("Download Image", clazz = ActivityDownloadFile::class.java, type = ComponentType.BODY),
                 CombineScreenModel("Permission and News App", clazz = ActivityNews::class.java, type = ComponentType.BODY),
+
+                CombineScreenModel("RoomDB", clazz = InsertUserActivity::class.java, type = ComponentType.BODY),
             )
         }
     }
