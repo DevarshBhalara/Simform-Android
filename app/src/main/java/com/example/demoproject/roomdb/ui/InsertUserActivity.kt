@@ -3,21 +3,17 @@ package com.example.demoproject.roomdb.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProvider
-import androidx.room.Room
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.ItemTouchHelper
 import com.example.demoproject.databinding.ActivityInsertUserBinding
-import com.example.demoproject.roomdb.repository.UserRepository
+import com.example.demoproject.roomdb.adapter.UserRoomDBAdapter
+import com.example.demoproject.roomdb.helpers.SwipeToDeleteCallback
+import com.example.demoproject.roomdb.listners.ItemClickListener
 import com.example.demoproject.roomdb.room.User
-import com.example.demoproject.roomdb.room.UserDatabase
 import com.example.demoproject.roomdb.viewModel.AddUserViewModel
-import com.example.demoproject.roomdb.viewModel.UserViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.HiltAndroidApp
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -26,7 +22,8 @@ class InsertUserActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityInsertUserBinding
     private val viewModel: AddUserViewModel by viewModels()
-
+    private val adapter = UserRoomDBAdapter()
+    lateinit var users: List<User>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,23 +34,60 @@ class InsertUserActivity : AppCompatActivity() {
     }
 
     private fun bindObservers() {
-        GlobalScope.launch {
-            viewModel.user.collectLatest {
-                Log.d("users", it.toString())
+        lifecycleScope.launch {
+            launch {
+                viewModel.insertSuccess.observe(this@InsertUserActivity) {
+                    runOnUiThread {
+                        if (it.isNotEmpty()) {
+                            Toast.makeText(this@InsertUserActivity, it, Toast.LENGTH_SHORT).show()
+                            viewModel.getAllUser()
+                        }
+                    }
+                }
+            }
+
+            launch {
+                viewModel.user.collectLatest {
+                    users = it
+                    runOnUiThread { adapter.submitList(it) }
+                }
+            }
+
+            launch {
+                viewModel.deleteSuccess.observe(this@InsertUserActivity) {
+                    runOnUiThread {
+                        if (it.isNotEmpty()) {
+                            Toast.makeText(this@InsertUserActivity, it, Toast.LENGTH_SHORT).show()
+                            viewModel.getAllUser()
+                        }
+                    }
+                }
             }
         }
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
     private fun setupUI() {
+        binding.rvUsers.adapter = adapter
         viewModel.getAllUser()
+        adapter.itemClickListener = object : ItemClickListener<User> {
+            override fun onClick(item: User, position: Int) {
+                Log.d("click", "item")
+                val bottomSheetFragment = FragmentBottomSheet.newInstance(users[position])
+                bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
+            }
+        }
+        val itemTouchHelper = ItemTouchHelper(
+            SwipeToDeleteCallback { position ->
+                viewModel.deleteUser(users[position])
+            }
+        )
+        itemTouchHelper.attachToRecyclerView(binding.rvUsers)
+
         binding.btnInsert.setOnClickListener {
             val firstName = binding.edName.text.toString()
             val lastName = binding.edLastName.text.toString()
-
-            GlobalScope.launch {
-                viewModel.insertUser(User(firstName = firstName, lastName = lastName))
-            }
+            Log.d("btn", "click")
+            viewModel.insertUser(User(firstName = firstName, lastName = lastName))
         }
     }
 }

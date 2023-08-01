@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.demoproject.roomdb.room.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:padding="@dimen/dp_16"
+        android:layout_margin="@dimen/dp_16"
+        android:background="@color/green"
+        android:layout_height="wrap_content">
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="first Name"
+            android:text="@{user.firstName}"
+            android:id="@+id/tvFirstName"
+            />
+
+        <TextView
+            android:id="@+id/tvLastName"
+            app:layout_constraintTop_toBottomOf="@id/tvFirstName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvFirstName"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_height="wrap_content"
+            tools:text="last Name"
+            android:text="@{user.lastName}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
